@@ -5,16 +5,16 @@ export default function Header() {
   const navLinkStyles = ({ isActive }) =>
     isActive
       ? "text-[#7E6A52] font-bold"
-      : "text-[#2B2B2B] hover:text-[#D8D3C8] transition-colors duration-300";
+      : "text-[#2B2B2B] hover:text-[#909090] transition-colors duration-300";
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#F5F1E8]/80 backdrop-blur-lg border-b border-gray-700/50 shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-[#F0ECE3]/80 backdrop-blur-lg border-b border-gray-700/50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
           {/* Title / Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="font-bold text-xl  tracking-wide text-[#3A2B20]">
+            <Link to="/" className="font-extrabold text-2xl  tracking-tight text-[#3A2B20]">
               SAFAR.
             </Link>
           </div>
