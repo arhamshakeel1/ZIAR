@@ -1,15 +1,15 @@
 import React from 'react';
 
 export default function Card({
-  title = "Khunjerab Pass",
-  location = "Gilgit-Baltistan, Pakistan",
-  category = "Mountain Pass",
-  price = 140,
-  rating = 4.9,
-  description = "The highest paved international border crossing in the world, where alpine beauty meets history.",
-  duration = "Day Trip",
-  temperature = "-5°C",
-  elevation = "4,693 m",
+  title = "unknown",
+  location = "unknown",
+  category = "unknown",
+  price = 999,
+  rating = 999,
+  description = "unknown",
+  duration = "unknown",
+  temperature = "unknown",
+  elevation = "unknown",
   image = "https://images.unsplash.com/photo-1698754516345-d3c26027581d?q=80&w=800&auto=format&fit=crop"
 }) {
   return (
@@ -26,8 +26,8 @@ export default function Card({
         {/* Category Badge with Good Charcoal Color Background */}
         <div className="absolute top-3 left-3 z-10">
           <span className="inline-flex items-center rounded-4xl bg-gray-800 px-3 py-1 text-[10px] font-medium tracking-[0.2em] uppercase text-white border border-[#D8D4C7]/90">
-  {category}
-</span>
+              {category}
+          </span>
            
         </div>
         

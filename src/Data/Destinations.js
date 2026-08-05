@@ -1,57 +1,59 @@
 const Destinations = [
   {
     id: 1,
-    title: "Hunza",
+    title: "kashmir",
     country: "Pakistan",
     rating: 4.9,
-    reviews:100,
-    price: "999$",
-    bestTime:"May-july",
+    price: "999",
     duration:"5-6 days",
-    airport:"DXB",
     image: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?auto=format&fit=crop&w=800&q=80",
     featured: true,
+    category: "mountain"
   },
 
   {
     id: 2,
-    title: "Hunza",
+    title: "Hunza Valley",
     country: "Pakistan",
     rating: 4.9,
     reviews:100,
-    price: "999$",
+    price: "999",
     bestTime:"May-july",
     duration:"5-6 days",
     airport:"DXB",
+    category: "valley",
     image: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?auto=format&fit=crop&w=800&q=80",
     featured: true,
+    
   },
 
   {
     id: 3,
-    title: "Hunza",
+    title: "Skardu",
     country: "Pakistan",
     rating: 4.9,
     reviews:100,
-    price: "999$",
+    price: "999",
     bestTime:"May-july",
     duration:"5-6 days",
     airport:"DXB",
     image: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?auto=format&fit=crop&w=800&q=80",
     featured: true,
+    category: "desert"
   },
   {
     id: 4,
-    title: "Hunza",
+    title: "Fairy Meadows",
     country: "Pakistan",
     rating: 4.3,
     reviews:100,
-    price: "999$",
+    price: "999",
     bestTime:"May-july",
     duration:"5-6 days",
     airport:"DXB",
     image: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?auto=format&fit=crop&w=800&q=80",
     featured: false,
+    category: "alpine"
   },
   
 ];

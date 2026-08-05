@@ -17,7 +17,7 @@ createRoutesFromElements(
     <Route path='/' element= {<Layout/>} >
        <Route path='' element={<Home/>} />
        <Route path='Destinations' element={<Destination/>} />
-       <Route path='Flights Tracker' element={<Flights/>} /> 
+       <Route path='flights-tracker' element={<Flights/>} /> 
       
     </Route>
 

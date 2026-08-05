@@ -1,7 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
 
 export default function Header() {
-  // Function to handle active link styling using the #D8D3C8 color
+
+
+  
+  // Function to handle active link styling 
   const navLinkStyles = ({ isActive }) =>
     isActive
       ? "text-[#7E6A52] font-bold"

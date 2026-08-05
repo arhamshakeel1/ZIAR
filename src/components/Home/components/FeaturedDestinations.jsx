@@ -3,18 +3,23 @@ import Card from "../../Card/Card";
 import Destinations from "../../../Data/Destinations";
 
 // Define your categories here
-const CATEGORIES = ["All", "Mountains", "Valleys", "Historical", "Desert", "Urban"];
+
+
 
 function FeaturedDestinations() {
-  // State to track which category is currently selected
-  const [activeCategory, setActiveCategory] = useState("All");
 
-  // Filter destinations based on both the 'featured' flag and the active category
-  const filteredDestinations = Destinations.filter((dest) => {
-    const isFeatured = dest.featured;
-    const matchesCategory = activeCategory === "All" || dest.category === activeCategory;
-    return isFeatured && matchesCategory;
-  });
+const categories = ["All", "mountain", "valley", "alpine", "desert"];
+
+const [activeCategory, setActiveCategory] = useState("All")
+
+const filteredDestination = ()=>{
+
+  
+  return activeCategory === "All" ? Destinations : Destinations.filter((dest)=>dest.category===activeCategory)
+  
+
+}
+
 
   return (
     <section className="bg-[#e3ded3] py-24 sm:py-20 font-sans">
@@ -63,39 +68,44 @@ function FeaturedDestinations() {
 
         {/* Categories Row */}
         <div className="mb-12 flex flex-wrap items-center gap-3">
-          {CATEGORIES.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`rounded-full border px-6 py-2.5 text-sm font-medium transition-all duration-300 ${
-                activeCategory === category
-                  ? "bg-[#EBE6DD] text-black border-[#1A1A1A] shadow-md"
-                  : "bg-[#efe9dd] text-gray-500 border-gray-200 hover:border-gray-400 hover:text-[#1A1A1A]"
-              }`}
+           {
+           
+           categories.map((category) => (
+            <button onClick={()=>(setActiveCategory(category))} className={`rounded-full border px-6 py-2.5 text-sm font-medium transition-all duration-300 ${activeCategory === category ? "bg-[#EBE6DD] text-black border-[#1A1A1A] shadow-md" : "bg-[#efe9dd] text-gray-500 border-gray-200 hover:border-gray-400 hover:text-[#1A1A1A]"}`}
             >
               {category}
             </button>
-          ))}
-        </div>
+
+            ))
+            }
+             </div>
 
         {/* Cards Grid */}
+
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-          {filteredDestinations.map((dest) => (
-            <Card
-              key={dest.id}
-              image={dest.image}
-              title={dest.title}
-              reviews={dest.reviews}
-              bestTime={dest.bestTime}
-              duration={dest.duration}
-              country={dest.country}
-              rating={dest.rating}
-              stay={dest.stay}
-              airport={dest.airport}
-              price={dest.price}
-            />
+          
+           { filteredDestination().map((dest)=> (
+
+            <div key={dest.id} className="w-full">
+              <Card
+                image={dest.image}
+                title={dest.title}
+                country={dest.country}
+                rating={dest.rating}
+                price={dest.price}
+                duration={dest.duration}
+                category={dest.category}
+                description={dest.description}
+                temperature={dest.temperature}
+                elevation={dest.elevation}
+              />
+            </div>
+
           ))}
-        </div>
+          
+         
+
+      </div>
 
       </div>
     </section>

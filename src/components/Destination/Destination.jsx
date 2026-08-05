@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-import Destinations from '../../Data/Destinations'; // Import your dataset if needed
+import Destinations from '../../Data/Destinations'; 
 
 export default function Destination() {
   return (
