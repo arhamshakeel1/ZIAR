@@ -8,7 +8,7 @@ export default function WishlistProvider({ children }) {
   setWishlist((prev) =>
     prev.includes(id)
       ? prev.filter((item) => item !== id)
-      : [...prev, id]
+      : [...prev, id]//makes new array and includes id
   );
 };
 

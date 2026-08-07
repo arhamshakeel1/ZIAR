@@ -1,8 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
+import useTheme from '../../Contexts/ThemeContext';
+import ThemeBtn from './components/ThemeBtn.jsx';
+
 
 export default function Header() {
 
 
+  const {themeState} = useTheme();
   
   // Function to handle active link styling 
   const navLinkStyles = ({ isActive }) =>
@@ -11,7 +15,7 @@ export default function Header() {
       : "text-[#2B2B2B] hover:text-[#909090] transition-colors duration-300";
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#F0ECE3]/80 backdrop-blur-lg border-b border-gray-700/50 shadow-sm">
+    <header className= {themeState === "dark" ? "bg-[#ce966d] text-white" : " sticky top-0 z-50 w-full bg-[#F0ECE3]/80 backdrop-blur-lg border-b border-gray-700/50 shadow-sm" }>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
@@ -33,15 +37,7 @@ export default function Header() {
           {/* Right Side Actions */}
           <div className="flex items-center space-x-6">
             
-            {/* Dark Mode Toggle Button */}
-            <button 
-              className="text-gray-400 hover:text-[#D8D3C8] transition-colors duration-300"
-              aria-label="Toggle Dark Mode"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-              </svg>
-            </button>
+            <ThemeBtn/>
 
             {/* Login Button */}
             <Link

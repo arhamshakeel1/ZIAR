@@ -9,6 +9,12 @@ import Destination from './components/Destination/Destination.jsx'
 import Flights from './components/Flights/Flights.jsx'
 import Wishlist from './components/Wishlist/Wishlist.jsx'
 import WishlistProvider  from './Contexts/WishlistProvider.jsx'
+import ThemeProvider from './Contexts/ThemeProvider.jsx'
+import { flightInfoLoader } from './hooks/useFlightInfo.jsx'
+import BookingPage from './components/BookingDetails/BookingPage.jsx'
+
+
+
 
 
 const router = createBrowserRouter(
@@ -19,8 +25,10 @@ createRoutesFromElements(
     <Route path='/' element= {<Layout/>} >
        <Route path='' element={<Home/>} />
        <Route path='Destinations' element={<Destination/>} />
-       <Route path='flights-tracker' element={<Flights/>} /> 
+       <Route loader = {flightInfoLoader} path='flights-tracker' element={<Flights/>} /> 
        <Route path='wishlist' element={<Wishlist/>} /> 
+       <Route path='book-now/:userId' element={<BookingPage/>} />
+       
       
     </Route>
 
@@ -31,9 +39,11 @@ createRoutesFromElements(
 createRoot(document.getElementById('root')).render(
   
   <StrictMode>
+    <ThemeProvider>
     <WishlistProvider>
     <RouterProvider router={router} />
    </WishlistProvider>
+    </ThemeProvider>
   </StrictMode>
  
 

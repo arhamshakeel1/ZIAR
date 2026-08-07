@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import useSearchQuery from '../../../hooks/useWishlistContext';
-
+import useTheme from '../../../Contexts/ThemeContext';
 
 export default function Hero(
 {  searchValue,
@@ -11,8 +11,11 @@ export default function Hero(
 
 {
 
+
+    const {themeState} = useTheme();
+
   return (
-    <section className="bg-[#d7cfbf] min-h-screen py-12 px-4 sm:px-6 lg:px-12 flex flex-col items-center justify-center font-sans">
+    <section className={` ${ themeState ==="dark" ? "bg-[#121111]" : "bg-[#d7cfbf]"} min-h-screen py-12 px-4 sm:px-6 lg:px-12 flex flex-col items-center justify-center font-sans`}>
       
       {/* Boxed Hero Container */}
       <div className="w-full max-w-[1360px] relative flex flex-col items-center">

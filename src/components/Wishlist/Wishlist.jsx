@@ -5,21 +5,21 @@ import useWishlistContext from '../../hooks/useWishlistContext'
 
 
 
-
 function Wishlist() {
 
 const {wishlist} = useWishlistContext();
-
-
 const filteredDestinations =  Destinations.filter((des)=> wishlist.includes(des.id));
 
 
-console.log("inside wishlist",filteredDestinations);
+
 
     return (
      <div className="min-h-screen bg-[#ede7d8] py-16 sm:py-24 font-sans">
       <div className="mx-auto max-w-340 px-6 lg:px-12 w-full">
-      
+        {
+          
+          wishlist.length===0 ? <div className="text-center text-1xl border-2 box-border border-t-2 "><h1>wishlist is empty</h1></div>  :    
+
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
                 
                  { filteredDestinations.map((dest)=> (
@@ -41,10 +41,9 @@ console.log("inside wishlist",filteredDestinations);
                   </div>
       
                 ))}
-                
-               
-      
-            </div>
+        
+            </div> 
+            }
       
        
         </div>
