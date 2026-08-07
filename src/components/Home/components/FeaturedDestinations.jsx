@@ -1,24 +1,40 @@
 import React, { useState } from "react";
 import Card from "../../Card/Card";
 import Destinations from "../../../Data/Destinations";
+import { Link } from "react-router-dom";
+import {useEffect} from 'react';
+
 
 // Define your categories here
 
 
 
-function FeaturedDestinations() {
+function FeaturedDestinations( {searchValue}) {
 
 const categories = ["All", "mountain", "valley", "alpine", "desert"];
 
-const [activeCategory, setActiveCategory] = useState("All")
+const [activeCategory, setActiveCategory] = useState("All");
 
-const filteredDestination = ()=>{
+//const [isDisable, setIsDisabled] = useState(false);
 
+const selectedDestinations = Destinations.filter((dest)=> dest.title.toLowerCase().includes(searchValue.toLowerCase()))
   
-  return activeCategory === "All" ? Destinations : Destinations.filter((dest)=>dest.category===activeCategory)
-  
+const filteredDestinations =
+    searchValue.trim() != "" ?
+      selectedDestinations
+    : activeCategory === "All" 
+    ? selectedDestinations
+    : selectedDestinations.filter(
+        (dest) => dest.category === activeCategory
+      );
 
-}
+useEffect(() => {
+  if (searchValue.trim() !== "") {
+    setActiveCategory("All");
+  }
+  }, [searchValue]);
+
+
 
 
   return (
@@ -45,7 +61,9 @@ const filteredDestination = ()=>{
 
           {/* View All Button */}
           <div className="pb-2">
-            <button className="group flex items-center gap-2 text-sm font-semibold tracking-wide text-[#1A1A1A] transition-colors hover:text-gray-500">
+
+            <Link to="/Destinations">
+            <button  className="group flex items-center gap-2 text-sm font-semibold tracking-wide text-[#1A1A1A] transition-colors hover:text-gray-500">
               View All Locations
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
@@ -62,6 +80,8 @@ const filteredDestination = ()=>{
                 <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
               </svg>
             </button>
+            </Link>
+
           </div>
           
         </div>
@@ -71,7 +91,7 @@ const filteredDestination = ()=>{
            {
            
            categories.map((category) => (
-            <button onClick={()=>(setActiveCategory(category))} className={`rounded-full border px-6 py-2.5 text-sm font-medium transition-all duration-300 ${activeCategory === category ? "bg-[#EBE6DD] text-black border-[#1A1A1A] shadow-md" : "bg-[#efe9dd] text-gray-500 border-gray-200 hover:border-gray-400 hover:text-[#1A1A1A]"}`}
+            <button  key={category} onClick={()=>(setActiveCategory(category))} className={`rounded-full border px-6 py-2.5 text-sm font-medium transition-all duration-300 ${activeCategory === category ? "bg-[#EBE6DD] text-black border-[#1A1A1A] shadow-md" : "bg-[#efe9dd] text-gray-500 border-gray-200 hover:border-gray-400 hover:text-[#1A1A1A]"}`}
             >
               {category}
             </button>
@@ -84,10 +104,11 @@ const filteredDestination = ()=>{
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           
-           { filteredDestination().map((dest)=> (
+           { filteredDestinations.map((dest)=> (
 
             <div key={dest.id} className="w-full">
               <Card
+                id={dest.id}
                 image={dest.image}
                 title={dest.title}
                 country={dest.country}

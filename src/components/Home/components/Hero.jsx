@@ -1,6 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
+import useSearchQuery from '../../../hooks/useWishlistContext';
 
-export default function Hero() {
+
+export default function Hero(
+{  searchValue,
+  setSearchValue
+}
+) 
+
+{
+
   return (
     <section className="bg-[#d7cfbf] min-h-screen py-12 px-4 sm:px-6 lg:px-12 flex flex-col items-center justify-center font-sans">
       
@@ -54,11 +64,19 @@ export default function Hero() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 w-5 h-5 mr-4 flex-shrink-0">
                   <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
                 </svg>
+
+
+
                 <input
+                onChange={(e)=>setSearchValue(e.target.value)}
                   type="text"
+                  value = {searchValue}
                   placeholder="Search destinations, trips or categories..."
                   className="w-full bg-transparent text-gray-900 placeholder-gray-500 text-[15px] font-medium tracking-wide focus:outline-none"
                 />
+
+
+
               </div>
               <button className="bg-[#1A1A1A] hover:bg-black text-white px-10 py-4 rounded-full font-semibold tracking-wide transition-all shadow-lg flex-shrink-0 text-sm">
                 Explore Now
@@ -75,7 +93,7 @@ export default function Hero() {
             </div>
             <div className="text-left">
               <p className="text-white/70 text-[9px] font-bold uppercase tracking-[0.2em] mb-0.5">Featured Location</p>
-              <p className="text-white text-[15px] font-serif italic tracking-wide">Amalfi Coast, Italy</p>
+              <p className="text-white text-[15px] font-serif italic tracking-wide">Skardu,Pakistan</p>
             </div>
           </div>
           

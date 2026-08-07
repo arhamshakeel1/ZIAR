@@ -1,6 +1,9 @@
 import React from 'react';
+import useWishlistContext from '../../hooks/useWishlistContext';
+
 
 export default function Card({
+  id="unknown",
   title = "unknown",
   location = "unknown",
   category = "unknown",
@@ -12,6 +15,12 @@ export default function Card({
   elevation = "unknown",
   image = "https://images.unsplash.com/photo-1698754516345-d3c26027581d?q=80&w=800&auto=format&fit=crop"
 }) {
+
+
+const { wishlist, toggleWishlist } = useWishlistContext();
+console.log("inside card",wishlist)
+//const isWishlisted = wishlist.includes(id);
+
   return (
     <div className="group flex w-full max-w-[380px] flex-col rounded-[2rem] bg-[#f6f2ea] p-2.5 border border-[#EFEAE1] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_25px_rgba(0,0,0,0.06)]">
       
@@ -32,7 +41,9 @@ export default function Card({
         </div>
         
         {/* Soft Heart Button */}
-        <button className="absolute top-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-md transition-all hover:bg-white hover:text-red-500 hover:scale-105">
+        <button 
+        onClick = {()=>toggleWishlist(id)}
+        className="absolute top-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-md transition-all hover:bg-white hover:text-red-500 hover:scale-105">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
           </svg>
@@ -95,7 +106,7 @@ export default function Card({
         </div>
 
         {/* Thin Divider Line */}
-        <div className="h-[1px] w-full bg-[#EFEAE1] mb-5"></div>
+        <div className="h-[1px] w-full bg-[#d3c9b6] mb-5"></div>
 
         {/* Footer: Prominent Price & Advanced Book Button */}
         <div className="mt-auto flex items-center justify-between">
@@ -105,12 +116,12 @@ export default function Card({
             </span>
             <div className="flex items-baseline gap-1">
               <span className="text-2xl font-black text-[#1A1A1A]">${price}</span>
-              <span className="text-sm font-medium text-gray-500">/ person</span>
+              <span className="text-sm font-medium text-gray-500">/ Night</span>
             </div>
           </div>
 
           {/* Upgraded Button with hover arrow effect */}
-          <button className="group/btn flex items-center gap-2 rounded-full bg-[#E3DDD3] px-5 py-3 text-[13px] font-bold tracking-wide text-black transition-all hover:bg-[E3DDD3] hover:shadow-lg">
+          <button className="group/btn flex items-center gap-2 rounded-full bg-[#E3DDD3] px-5 py-3 text-[13px] font-bold tracking-wide text-amber-950 transition-all hover:bg-[E3DDD3] hover:shadow-lg">
             Book Now
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover/btn:translate-x-1">
               <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
