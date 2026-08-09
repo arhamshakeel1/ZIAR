@@ -1,3 +1,8 @@
+import azadKashmir from "../assets/azad-kashmir.jpg";
+import fairyMeadows from "../assets/fairy-meadows.png";
+import hunzaValley from "../assets/hunza-valley.jpg";
+import skardu from "../assets/skardu.jpg";
+
 const Destinations = [
   {
     id: 1,
@@ -7,7 +12,7 @@ const Destinations = [
     temperature: "24°C",
     elevation:"1709m",
     duration:"5-6 days",
-    image: "/src/assets/azad-kashmir.jpg",
+    image: azadKashmir,
     featured: true,
     category: "Mountain",
     price: "120",
@@ -23,7 +28,7 @@ const Destinations = [
     temperature: "20°C",
     elevation:"1892m",
     duration:"6-7 days",
-    image: "/src/assets/hunza-valley.jpg",
+    image: hunzaValley,
     featured: true,
     category: "Valley",
     price: "145",
@@ -39,7 +44,7 @@ const Destinations = [
     temperature: "17°C",
     elevation:"2311m",
     duration:"4-5 days",
-    image: "/src/assets/skardu.jpg",
+    image: skardu,
     featured: true,
     category: "Desert",
     description:"Gilgit Baltistan",
@@ -53,7 +58,7 @@ const Destinations = [
     temperature: "14°C",
     elevation:"3300m",
     duration:"2-3 days",
-    image: "/src/assets/fairy-meadows.png",
+    image: fairyMeadows,
     featured: true,
     category: "Alpine",
     price: "90",

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import useTheme from '../../../Contexts/ThemeContext';
+import heroImage from "../../../assets/hero_1.jpg";
+
 
 export default function Hero({ searchValue, setSearchValue }) {
   const { themeState } = useTheme();
@@ -16,7 +18,7 @@ export default function Hero({ searchValue, setSearchValue }) {
           
           {/* Cinematic High-Res Image */}
           <img 
-            src="/src/assets/hero_1.jpg"
+            src= {heroImage}
             alt="Amalfi Coast, Italy" 
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[25000ms] group-hover:scale-110"
           />
