@@ -17,7 +17,7 @@ function ThemeBtn() {
     <div >
       {/* Dark Mode Toggle Button */}
             <button onClick={onChangeButton}
-              className="text-gray-400 hover:text-[#D8D3C8] transition-colors duration-300"
+              className=" w-9 h-9 rounded-full border border-[#3A2B20]/40 flex items-center justify-center hover:bg-[#3A2B20]/10 transition-colors duration-300"
               aria-label="Toggle Dark Mode"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

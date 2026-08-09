@@ -4,27 +4,30 @@ const Destinations = [
     title: "Azad kashmir",
     location: "Pakistan",
     rating: 4.9,
-    price: "38",
-    temperature: 3,
-    elevation:4,
+    temperature: "24°C",
+    elevation:"1709m",
     duration:"5-6 days",
-    image: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?auto=format&fit=crop&w=800&q=80",
+    image: "/src/assets/azad-kashmir.jpg",
     featured: true,
-    category: "mountain"
+    category: "Mountain",
+    price: "120",
+    description:"Azad Jammu Kashmir"
+    
   },
 
   {
     id: 2,
     title: "Hunza Valley",
     location: "Pakistan",
-    rating: 4.9,
-    price: "43",
-    temperature: 3,
-    elevation:4,
-    duration:"5-6 days",
-    image: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?auto=format&fit=crop&w=800&q=80",
+    rating: 4.7,
+    temperature: "20°C",
+    elevation:"1892m",
+    duration:"6-7 days",
+    image: "/src/assets/hunza-valley.jpg",
     featured: true,
-    category: "valley"
+    category: "Valley",
+    price: "145",
+    description:"Gilgit Baltistan"
     
   },
 
@@ -32,27 +35,29 @@ const Destinations = [
    id: 3,
     title: "Skardu",
     location: "Pakistan",
-    rating: 4.9,
-    price: "49",
-    temperature: 3,
-    elevation:4,
-    duration:"5-6 days",
-    image: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?auto=format&fit=crop&w=800&q=80",
+    rating: 4.6,
+    temperature: "17°C",
+    elevation:"2311m",
+    duration:"4-5 days",
+    image: "/src/assets/skardu.jpg",
     featured: true,
-    category: "desert"
+    category: "Desert",
+    description:"Gilgit Baltistan",
+    price: "170"
   },
   {
     id: 4,
     title: "Feary Meadows",
     location: "Pakistan",
-    rating: 4.9,
-    price: "99",
-    temperature: 3,
-    elevation:4,
-    duration:"5-6 days",
-    image: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?auto=format&fit=crop&w=800&q=80",
+    rating: 4.3,
+    temperature: "14°C",
+    elevation:"3300m",
+    duration:"2-3 days",
+    image: "/src/assets/fairy-meadows.png",
     featured: true,
-    category: "alpine"
+    category: "Alpine",
+    price: "90",
+    description:"Nanga Parbat base"
   },
   
 ];

@@ -2,28 +2,41 @@ import React from 'react'
 import Card from '../Card/Card'
 import Destinations from '../../Data/Destinations'
 import useWishlistContext from '../../hooks/useWishlistContext'
-
+import useTheme from '../../Contexts/ThemeContext'
 
 
 function Wishlist() {
 
-const {wishlist} = useWishlistContext();
-const filteredDestinations =  Destinations.filter((des)=> wishlist.includes(des.id));
+  const {wishlist} = useWishlistContext();
+  const filteredDestinations =  Destinations.filter((des)=> wishlist.includes(des.id));
+  const { themeState } = useTheme();
 
-
-
-
-    return (
-     <div className="min-h-screen bg-[#ede7d8] py-16 sm:py-24 font-sans">
-      <div className="mx-auto max-w-340 px-6 lg:px-12 w-full">
-        {
-          
-          wishlist.length===0 ? <div className="text-center text-1xl border-2 box-border border-t-2 "><h1>wishlist is empty</h1></div>  :    
-
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-                
-                 { filteredDestinations.map((dest)=> (
+  return (
+    <div className={`min-h-screen  ${themeState === "dark" ? "bg-[#191c1f]" : "bg-[#ECE8E1]"} py-16 sm:py-24 font-sans`}>
+      <div>
       
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12 w-full">
+          
+          {/* ---  HEADING SECTION --- */}
+        <div className="mb-10">
+          <p className="mb-3 text-[15px] font-bold uppercase tracking-[0.3em] text-[#8B8175]">
+            WISHLIST CATALOG
+          </p>
+          <h1 className={`text-4xl font-light tracking-tight ${themeState==='dark' ? "text-[#d6c8b2]" : "text-[#121110]" } md:text-5xl lg:text-6xl`}>
+            Saved <span className="font-serif font-medium italic text-gray-500">Destinations</span>
+          </h1>
+        </div>
+        <div className="h-[1px] w-full bg-[#8b8273] mb-25"></div>
+          {/* --------------------------- */}
+
+          {
+            wishlist.length === 0 ? (
+              <div className={` ${themeState === "dark" ? "text-[#ECE8E1]" : "text-[#151719]"} text-center text-xl mt-12 `}>
+                <h1>Your wishlist is empty</h1>
+              </div>  
+            ) : (    
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12 w-full">
+                 { filteredDestinations.map((dest)=> (
                   <div key={dest.id} className="w-full">
                     <Card
                       id={dest.id}
@@ -39,16 +52,13 @@ const filteredDestinations =  Destinations.filter((des)=> wishlist.includes(des.
                       elevation={dest.elevation}
                     />
                   </div>
-      
                 ))}
-        
-            </div> 
-            }
-      
+              </div> 
+            )
+          }
        
         </div>
-
-
+      </div>
     </div>
   )
 }

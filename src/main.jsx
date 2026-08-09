@@ -12,6 +12,7 @@ import WishlistProvider  from './Contexts/WishlistProvider.jsx'
 import ThemeProvider from './Contexts/ThemeProvider.jsx'
 import { flightInfoLoader } from './hooks/useFlightInfo.jsx'
 import BookingPage from './components/BookingDetails/BookingPage.jsx'
+import AboutPage from './components/About/About.jsx'
 
 
 
@@ -23,11 +24,12 @@ createRoutesFromElements(
 
 
     <Route path='/' element= {<Layout/>} >
-       <Route path='' element={<Home/>} />
+        <Route loader = {flightInfoLoader} path='' element={<Home/>} /> {/*so its mandatory to add loader = {flightInfoLoader} in wihchever loader you are using otherwise it would throw error  */}
        <Route path='Destinations' element={<Destination/>} />
        <Route loader = {flightInfoLoader} path='flights-tracker' element={<Flights/>} /> 
        <Route path='wishlist' element={<Wishlist/>} /> 
        <Route path='book-now/:userId' element={<BookingPage/>} />
+       <Route path='about' element={<AboutPage/>} />
        
       
     </Route>

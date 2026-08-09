@@ -3,16 +3,16 @@ import { useState,useEffect } from "react";
 
 export default function ThemeProvider({children}){
 
-    const [themeState, setThemeState] = useState("")
+    const [themeState, setThemeState] = useState("dark")
 
     const lightTheme = ()=>
     {
-        setThemeState("light")
+        setThemeState("dark")
          
     }
     const darkTheme = ()=>
     {
-        setThemeState("dark")
+        setThemeState("light")
        
         
     }
