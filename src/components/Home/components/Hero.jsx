@@ -3,57 +3,57 @@ import { useState } from 'react';
 import useTheme from '../../../Contexts/ThemeContext';
 import heroImage from "../../../assets/hero_1.webp";
 
-
 export default function Hero({ searchValue, setSearchValue }) {
   const { themeState } = useTheme();
 
   return (
-    <section className={` ${themeState === "dark" ? "bg-[#191c1f]" : "bg-[#E8E4D9]"}  py-20 px-4 sm:px-6 lg:px-12 flex flex-col items-center justify-center font-sans transition-colors duration-500`}>
+   
+    <section className={` ${themeState === "dark" ? "bg-[#191c1f]" : "bg-[#E8E4D9]"} py-10 sm:py-20 px-4 sm:px-6 lg:px-12 flex flex-col items-center justify-center font-sans transition-colors duration-500`}>
       
-      {/* Boxed Hero Container */}
       <div className="w-full max-w-[1360px] relative flex flex-col items-center">
         
-        {/* Main Image Wrapper - Reduced Heights */}
-        <div className="relative w-full h-[60vh] min-h-[450px] max-h-[650px] rounded-[32px] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] border border-gray-200/20 group">
+        {/* 2. Reduced minimum height for mobile so it doesn't push all content off-screen */}
+        <div className="relative w-full h-[60vh] min-h-[400px] sm:min-h-[450px] max-h-[650px] rounded-[2rem] sm:rounded-[32px] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] border border-gray-200/20 group">
           
-          {/* Cinematic High-Res Image */}
           <img 
-            src= {heroImage}
+            src={heroImage}
             alt="Amalfi Coast, Italy" 
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[25000ms] group-hover:scale-110"
           />
           
-          {/* Subtle Overlays for Readability & Deep Mood */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/70 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent"></div>
 
-          {/* Hero Content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8 mt-[-30px]">
              
-            {/* Improved Layered Typography */}
             <div className="flex flex-col items-center drop-shadow-2xl">
               
-              <span className="text-sm md:text-base text-gray-200 uppercase tracking-[0.4em] font-semibold mb-2 md:mb-3">
+              <span className="text-xs sm:text-sm md:text-base text-gray-200 uppercase tracking-[0.3em] sm:tracking-[0.4em] font-semibold mb-2 md:mb-3">
                 Your Next Escape
               </span>
               
-              {/* Scaled down text size to fit smaller height */}
-              <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-serif italic text-[#ede7d8] mb-4 leading-[1.1] tracking-tight">
+              {/* 3. Scaled title: text-4xl for mobile, 5xl to 6rem for larger screens */}
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-serif italic text-[#ede7d8] mb-3 sm:mb-4 leading-[1.1] tracking-tight">
                 To The North,
               </h1>
               
-              <p className="text-xs md:text-sm text-gray-300 uppercase tracking-[0.3em] font-medium mt-1">
+              <p className="text-[10px] sm:text-xs md:text-sm text-gray-300 uppercase tracking-[0.2em] sm:tracking-[0.3em] font-medium mt-1">
                 Is closer than you think
               </p>
               
             </div>
           </div>
 
-          {/* Floating Search Bar - Adjusted Bottom Spacing */}
-          <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-full max-w-3xl px-4 z-20">
-            <div className="bg-[#ede7d8]/95 backdrop-blur-2xl p-2.5 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.4)] flex items-center border border-white/60 transition-all hover:bg-[#f5efe3] hover:shadow-[0_15px_50px_rgba(0,0,0,0.5)]">
-              <div className="flex items-center flex-1 px-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 w-5 h-5 mr-4 flex-shrink-0">
+          {/* 4. Search Bar: Adjusted spacing for mobile (bottom-8) */}
+          <div className="absolute bottom-8 sm:bottom-12 left-1/2 transform -translate-x-1/2 w-[92%] sm:w-full max-w-3xl z-20">
+            
+            {/* 5. Search Bar Container: Column on mobile (flex-col), Row on desktop (sm:flex-row) */}
+            {/* We also change rounded-full to rounded-3xl on mobile to fit the stacked layout */}
+            <div className="bg-[#ede7d8]/95 backdrop-blur-2xl p-2 sm:p-2.5 rounded-3xl sm:rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.4)] flex flex-col sm:flex-row items-stretch sm:items-center border border-white/60 transition-all hover:bg-[#f5efe3] hover:shadow-[0_15px_50px_rgba(0,0,0,0.5)] gap-2 sm:gap-0">
+              
+              {/* Input Area */}
+              <div className="flex items-center flex-1 px-4 sm:px-6 py-2 sm:py-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 w-5 h-5 mr-3 sm:mr-4 flex-shrink-0">
                   <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
                 </svg>
 
@@ -61,18 +61,20 @@ export default function Hero({ searchValue, setSearchValue }) {
                   onChange={(e) => setSearchValue(e.target.value)}
                   type="text"
                   value={searchValue}
-                  placeholder="Search destinations, trips or categories..."
-                  className="w-full bg-transparent text-gray-900 placeholder-gray-400 text-[15px] font-medium tracking-wide focus:outline-none"
+                  placeholder="Search destinations..."
+                  className="w-full bg-transparent text-gray-900 placeholder-gray-500 text-[14px] sm:text-[15px] font-medium tracking-wide focus:outline-none"
                 />
-
               </div>
-              <button className="bg-[#1A1A1A] hover:bg-black text-white px-8 py-3.5 rounded-full font-semibold tracking-wide transition-all shadow-lg flex-shrink-0 text-sm">
+
+              {/* 6. Button: Full width on mobile (w-full), auto width on desktop (sm:w-auto) */}
+              <button className="bg-[#1A1A1A] hover:bg-black text-white px-8 py-3 sm:py-3.5 rounded-full font-semibold tracking-wide transition-all shadow-lg flex-shrink-0 text-sm w-full sm:w-auto">
                 Explore Now
               </button>
+              
             </div>
           </div>
 
-          {/* Creative Element: Floating Destination Tag */}
+          {/* Floating Destination Tag */}
           <div className="absolute top-6 right-6 hidden lg:flex items-center gap-4 transition-transform">
             <div className="bg-white/10 p-2.5 rounded-full backdrop-blur-md border border-white/20">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-[#ede7d8]">
@@ -86,8 +88,6 @@ export default function Hero({ searchValue, setSearchValue }) {
           </div>
           
         </div>
-
-        
 
       </div>
     </section>
