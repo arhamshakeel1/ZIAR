@@ -25,3 +25,4 @@ export const flightInfoLoader = async () => {
 
   return response.json();
 };
+

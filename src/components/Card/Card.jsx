@@ -13,7 +13,7 @@ export default function Card({
   duration = "unknown",
   temperature = "unknown",
   elevation = "unknown",
-  image = "https://images.unsplash.com/photo-1698754516345-d3c26027581d?q=80&w=800&auto=format&fit=crop"
+  image = ""
 }) {
 
   const { wishlist, toggleWishlist } = useWishlistContext();
@@ -29,6 +29,7 @@ export default function Card({
         <img
           src={image}
           alt={title}
+         loading="lazy"
           className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
         />
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import useTheme from '../../../Contexts/ThemeContext';
-import heroImage from "../../../assets/hero_1.jpg";
+import heroImage from "../../../assets/hero_1.webp";
 
 
 export default function Hero({ searchValue, setSearchValue }) {

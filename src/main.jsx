@@ -1,52 +1,55 @@
-import { StrictMode } from 'react'
+// main.jsx
+import { StrictMode, lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements
+} from 'react-router-dom'
+
 import Layout from './Layout.jsx'
 import Home from './components/Home/Home.jsx'
-import Destination from './components/Destination/Destination.jsx'
-import Flights from './components/Flights/Flights.jsx'
-import Wishlist from './components/Wishlist/Wishlist.jsx'
-import WishlistProvider  from './Contexts/WishlistProvider.jsx'
+
+import WishlistProvider from './Contexts/WishlistProvider.jsx'
 import ThemeProvider from './Contexts/ThemeProvider.jsx'
-import { flightInfoLoader } from './hooks/useFlightInfo.jsx'
-import BookingPage from './components/BookingDetails/BookingPage.jsx'
-import AboutPage from './components/About/About.jsx'
+// IMPORT YOUR NEW PROVIDER
+import { FlightProvider } from './Contexts/FlightContext.jsx'
 
-
-
-
+// Lazy-loaded pages
+import Destination from './components/Destination/Destination.jsx'
+const Flights = lazy(() => import('./components/Flights/Flights.jsx'))
+const Wishlist = lazy(() => import('./components/Wishlist/Wishlist.jsx'))
+const BookingPage = lazy(() => import('./components/BookingDetails/BookingPage.jsx'))
+const AboutPage = lazy(() => import('./components/About/About.jsx'))
 
 const router = createBrowserRouter(
-  
-createRoutesFromElements(
-
-
-    <Route path='/' element= {<Layout/>} >
-        <Route loader = {flightInfoLoader} path='' element={<Home/>} /> {/*so its mandatory to add loader = {flightInfoLoader} in wihchever loader you are using otherwise it would throw error  */}
-       <Route path='Destinations' element={<Destination/>} />
-       <Route loader = {flightInfoLoader} path='flights-tracker' element={<Flights/>} /> 
-       <Route path='wishlist' element={<Wishlist/>} /> 
-       <Route path='book-now/:userId' element={<BookingPage/>} />
-       <Route path='about' element={<AboutPage/>} />
-       
-      
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route path="" element={<Home />} />
+      <Route path="Destinations" element={<Destination />} />
+      <Route path="flights-tracker" element={<Flights />} />
+      <Route path="wishlist" element={<Wishlist />} />
+      <Route path="book-now/:userId" element={<BookingPage />} />
+      <Route path="about" element={<AboutPage />} />
     </Route>
-
-
-));
-
+  )
+)
 
 createRoot(document.getElementById('root')).render(
   
-  <StrictMode>
     <ThemeProvider>
-    <WishlistProvider>
-    <RouterProvider router={router} />
-   </WishlistProvider>
+      <WishlistProvider>
+        {/* WRAPING THE APP WITH FLIGHTPROVIDER */}
+        
+        <FlightProvider>
+          <Suspense>
+            <RouterProvider router={router} />
+          </Suspense>
+        </FlightProvider>
+      </WishlistProvider>
     </ThemeProvider>
-  </StrictMode>
  
-
 )

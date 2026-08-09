@@ -3,12 +3,12 @@ import Card from "../../Card/Card";
 import Destinations from "../../../Data/Destinations";
 import { Link } from "react-router-dom";
 import useTheme from '../../../Contexts/ThemeContext';
-import useFlightInfo from "../../../hooks/useFlightInfo";
 import FlightCard from "../../Card/FlightCard";
+import useFlightContext from "../../../Contexts/FlightContext";
 
 function FeaturedDestinations({ searchValue }) {
-  const flights = useFlightInfo();
 
+  const { flights, loading, error } = useFlightContext();
   const { themeState } = useTheme();
   const categories = ["All", "Mountain", "Valley", "Alpine", "Desert"];
   const [activeCategory, setActiveCategory] = useState("All");
@@ -58,7 +58,7 @@ function FeaturedDestinations({ searchValue }) {
           </div>
         </div>
 
-        <div className="mb-12 flex flex-wrap items-center gap-3">
+        <div className="mb-8 md:mb-12 flex flex-wrap items-center gap-2 md:gap-3">
            {categories.map((category) => (
             <button 
               key={category} 
@@ -74,7 +74,7 @@ function FeaturedDestinations({ searchValue }) {
            ))}
         </div>
 
-        <div className="mb-29 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+        <div className="mb-20 md:mb-29 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10 place-items-center sm:place-items-stretch">
            {filteredDestinations.map((dest) => (
             <div key={dest.id} className="w-full">
               <Card
@@ -135,16 +135,33 @@ function FeaturedDestinations({ searchValue }) {
           </div>
 
 
-       <div className="mb-30 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+     <div className="mb-30 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
 
-        {flights.slice(0,4).map((flight, index) => (
-       <FlightCard
-            key={index}
-            flight={flight}
-          />
-        ))}
+  {loading ? (
+    
+    <div className={`col-span-full flex flex-col items-center justify-center py-16 rounded-[1.5rem] border-2 border-dashed transition-all duration-300 ${themeState === "dark" ? "border-gray-700 bg-[#1e2125] text-gray-400" : "border-[#8b8273]/40 bg-[#EBE6DD] text-[#51301F]"}`}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-4 animate-bounce">
+        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l7 4-3.2 3.2-3.6-.9-.8.8 2.9 3.6 3.6 2.9.8-.8-.9-3.6L12 14l4 7 .8-.7z"/>
+      </svg>
+      <p className="text-sm font-bold uppercase tracking-widest">
+        Fetching Live Flights...
+      </p>
+    </div>
 
-     </div>
+  ) : error ? (
+    <p className="col-span-full text-center text-gray-500">
+      Unable to load live flights.
+    </p>
+  ) : (
+    flights.slice(0, 4).map((flight, index) => (
+      <FlightCard
+        key={index}
+        flight={flight}
+      />
+    ))
+  )}
+
+</div>
 
     
      </div>

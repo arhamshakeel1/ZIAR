@@ -1,7 +1,7 @@
-import azadKashmir from "../assets/azad-kashmir.jpg";
-import fairyMeadows from "../assets/fairy-meadows.png";
-import hunzaValley from "../assets/hunza-valley.jpg";
-import skardu from "../assets/skardu.jpg";
+import azadKashmir from "../assets/azad-kashmir.webp";
+import fairyMeadows from "../assets/fairy-meadows.webp";
+import hunzaValley from "../assets/hunza-valley.webp";
+import skardu from "../assets/skardu.webp";
 
 const Destinations = [
   {
