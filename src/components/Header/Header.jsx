@@ -1,6 +1,6 @@
 import { useState } from 'react'; // Add useState
 import { Link, NavLink } from 'react-router-dom';
-import useTheme from '../../Contexts/ThemeContext';
+import useTheme from '../../Contexts/ThemeContext.js';
 import ThemeBtn from './components/ThemeBtn.jsx';
 
 export default function Header() {
