@@ -15,7 +15,7 @@ import Home from './components/Home/Home.jsx'
 
 import WishlistProvider from './Contexts/WishlistProvider.jsx'
 import ThemeProvider from './Contexts/ThemeProvider.jsx'
-// IMPORT YOUR NEW PROVIDER
+
 import { FlightProvider } from './Contexts/FlightContext.jsx'
 
 // Lazy-loaded pages
@@ -42,8 +42,6 @@ createRoot(document.getElementById('root')).render(
   
     <ThemeProvider>
       <WishlistProvider>
-        {/* WRAPING THE APP WITH FLIGHTPROVIDER */}
-        
         <FlightProvider>
           <Suspense>
             <RouterProvider router={router} />

@@ -8,7 +8,7 @@ function BookingPage() {
   const { themeState } = useTheme();
   const { userId } = useParams();
 
-  const bookedCard = Destinations.find(
+  const bookedCard = Destinations.find( //returns the first element matched
     (des) => des.id === Number(userId)
   );
 

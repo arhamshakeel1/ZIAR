@@ -16,7 +16,7 @@ export default function Home() {
     <div className="bg-[#151719]">
         <Hero searchValue={searchValue}  setSearchValue={setSearchValue} />
         <FeaturedDestinations searchValue={searchValue} />
-  </div>
+   </div>
     </>
     
 );
