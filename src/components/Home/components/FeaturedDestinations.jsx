@@ -129,7 +129,7 @@ function FeaturedDestinations({ searchValue }) {
           </div>
 
           <div className="pb-2">
-            <Link to="/Destinations">
+            <Link to="/flights-tracker">
               <button className={`group flex items-center gap-2 text-sm font-semibold tracking-wide transition-colors ${themeState === "dark" ? "text-[#E8E4D9] hover:text-white" : "text-[#1A1A1A] hover:text-gray-500"}`}>
                 View All Flights
                 <span >→</span>
