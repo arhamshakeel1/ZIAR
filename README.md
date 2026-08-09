@@ -121,51 +121,7 @@ ZIAR was built to practice and demonstrate several core React concepts:
 
 ---
 
-## ✦ Getting Started
 
-Clone the repository:
-
-```bash
-git clone YOUR_REPOSITORY_URL
-```
-
-Move into the project:
-
-```bash
-cd ZIAR
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-The application will then be available through the local Vite development server.
-
----
-
-## ✦ Environment Variables
-
-The flight-tracking functionality uses an external API.
-
-API credentials should be stored in environment variables rather than directly inside the React source code.
-
-Example:
-
-```env
-VITE_RAPIDAPI_KEY=your_api_key
-```
-
-> **Never commit your API keys or other secrets to GitHub.**
-
----
 
 ## ✦ Performance
 
@@ -214,11 +170,7 @@ Some planned improvements include:
 
 ---
 
-## ✦ Author
 
-Built by **Arham** as a React-based travel project focused on exploring Pakistan through a modern web experience.
-
----
 
 ## License
 
