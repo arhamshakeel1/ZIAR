@@ -131,7 +131,7 @@ function FlightCard({ flight }) {
 
       {/* ACTION */}
       <button
-        onClick={() => alert("This is only a prototype")}
+        onClick={() => alert("This is only a prototype. You won't be directed to elsewhere.")}
         className="
           mt-7
           flex

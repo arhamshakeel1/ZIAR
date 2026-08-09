@@ -125,7 +125,7 @@ export default function BookingCard({
       </div>
 
       {/* 5. Primary CTA */}
-      <button className="w-full py-4 rounded-full bg-[#483226] text-white text-sm font-bold tracking-wide transition-transform hover:scale-[0.98] hover:bg-[#3a271d] shadow-md flex items-center justify-center gap-2">
+      <button  onClick={() => alert("This feature is coming soon. You won't be charged for now.")} className="w-full py-4 rounded-full bg-[#483226] text-white text-sm font-bold tracking-wide transition-transform hover:scale-[0.98] hover:bg-[#3a271d] shadow-md flex items-center justify-center gap-2">
         Book Now
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
