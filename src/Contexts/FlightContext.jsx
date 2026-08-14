@@ -13,7 +13,7 @@ export function FlightProvider({ children }) {
   useEffect(() => {
     const fetchFlights = async () => {
       try {
-        const url = "https://aerodatabox.p.rapidapi.com/flights/airports/iata/LHE?offsetMinutes=-120&durationMinutes=720&withLeg=true&direction=Departure&withCancelled=true&withCodeshared=true&withCargo=true&withPrivate=true&withLocation=false";
+        const url = "https://aerodatabox.p.rapidapi.com/flights/airports/iata/LHE?offsetMinutes=0&durationMinutes=720&withLeg=true&direction=Departure&withCancelled=true&withCodeshared=true&withCargo=true&withPrivate=true&withLocation=false";
 
         const options = {
           method: "GET",
