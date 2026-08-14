@@ -2,6 +2,7 @@
 import React from 'react';
 
 function FlightCard({ flight }) {
+   const isExpected = flight.status === "Expected";
   return (
     <div
       className="
@@ -36,7 +37,7 @@ function FlightCard({ flight }) {
             </div>
           </div>
 
-            <div className="
+            <div className={`
             
               rounded-full
               bg-[#2a2620]
@@ -47,8 +48,9 @@ function FlightCard({ flight }) {
               uppercase
               tracking-[0.15em]
               text-[#eae4de]
-            ">
-                 <span className="animate-ping">●</span>
+               ${isExpected ? "bg-green-900" : "bg-[#79330f]"}
+            `}>
+                 <span className="animate-ping ">●</span>
           <span
             
           >
