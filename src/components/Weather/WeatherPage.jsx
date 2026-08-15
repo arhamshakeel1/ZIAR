@@ -8,15 +8,17 @@ function WeatherPage() {
 
     console.log(weatherDatabyName);
 
-    useEffect(() => {
-        setSearch(city)
-    }, [city]);
+   useEffect(() => {
+    if (city && city !== search) {
+        setSearch(city);
+    }
+}, [city, search]);
 
     return (
 
         <main className="min-h-screen bg-[#191c1f] p-0.5">
 
-            {loading || !weatherDatabyName ?
+            {loading ?
 
                 <div className="min-h-screen flex flex-col items-center justify-center text-[#d6c8b2]">
 
@@ -45,7 +47,7 @@ function WeatherPage() {
 
 
                     {/* city name and country */}
-                    <div className="flex text-[#ffffff] items-center justify-center gap-3 mt-15 ">
+                    <div className="flex text-[#ffffff] items-center justify-center gap-3 mt-11 ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#bfae93" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mt-1">
                             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                             <circle cx="12" cy="10" r="3" />
@@ -60,7 +62,7 @@ function WeatherPage() {
                     </div>
 
                     {/* temp, svg */}
-                    <div className=" border rounded-xl border-2 border-[#9a8a6f] py-17 mt-9 mr-36 ml-36 bg-[#1e1a1a] mx-auto flex flex-col md:flex-row items-center justify-center gap-50 md:gap-45 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-white/5">
+                    <div className=" border rounded-xl border-2 border-[#9a8a6f] py-17 mt-5 mr-36 ml-36 bg-[#1e1a1a] mx-auto flex flex-col md:flex-row items-center justify-center gap-50 md:gap-45 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-white/5">
 
                         {/* Temperature */}
                         <div>
