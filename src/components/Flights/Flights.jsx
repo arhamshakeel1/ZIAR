@@ -7,7 +7,7 @@ import FlightCard from '../Card/FlightCard';
 export default function Flights() {
 
  const { flights, loading, error } = useFlightContext();
-  const { themeState } = useTheme();
+ const { themeState } = useTheme();
 
   return (
 
@@ -77,6 +77,8 @@ export default function Flights() {
         )}
 
       </div>
+
+      
 
     </div>
 

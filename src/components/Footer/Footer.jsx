@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className={`border-t transition-colors duration-500 ${themeState === "dark" ? "bg-[#29201e] border-gray-800/60 text-gray-400" : "bg-[#b6af9d] border-gray-300 text-gray-600"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-17">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
+
           <div>
             <span className={`text-xl font-bold tracking-wide ${themeState === "dark" ? "text-[#FBE9D0]" : "text-[#3A2B20]"}`}>ZIAR.</span>
             <p className="mt-3 text-sm leading-relaxed">
@@ -29,24 +29,50 @@ export default function Footer() {
             <h3 className={`text-sm font-semibold uppercase tracking-wider ${themeState === "dark" ? "text-[#E8E4D9]" : "text-[#2B2B2B]"}`}>Account</h3>
             <ul className="mt-4 space-y-3 text-sm mb-9">
               <button className="hover:text-gray-400 transition-colors">Login</button> <br></br>
-              <button  className="hover:text-gray-400 transition-colors">Privacy Policy</button><br></br>
-              <li> <Link  to="/about" className="hover:text-gray-400 transition-colors">About ZIAR</Link></li>
+              <button className="hover:text-gray-400 transition-colors">Privacy Policy</button><br></br>
+              <li> <Link to="/about" className="hover:text-gray-400 transition-colors">About ZIAR</Link></li>
             </ul>
-            
+
           </div>
-          
+
         </div>
-         <div className="h-[1px] w-full bg-[#8b8273] mb-3"></div>
+        <div className="h-[1px] w-full bg-[#8b8273] mb-3"></div>
+
+
         {/* Developer Credit Added Here */}
-        <div className="mt-1 pt-3 border-t border-current/10 flex justify-center items-center">
-        
-         <a href="https://www.linkedin.com/in/arham-shakeel/">
-          <p className={`text-sm font-medium ${themeState ==="dark" ? "text-[#FBE9D0]": "text-[#12110f]"} `} >
-            Developed by Arham Shakeel
-          </p>
-           </a>
+        <div className="relative mt-1 pt-3 border-t border-current/10 flex justify-center items-center">
+
+          {/* Center */}
+          <a href="https://github.com/arhamshakeel1">
+            <p
+              className={`text-[16px] font-medium ${themeState === "dark"
+                  ? "text-[#a7a7b3]"
+                  : "text-[#12110f]"
+                }`}
+            >
+              Developed and designed by Arham Shakeel
+            </p>
+          </a>
+
+          {/* Right */}
+          <a
+            href="https://www.linkedin.com/in/arham-shakeel/"
+            className="absolute right-0 flex gap-1 items-center justify-between"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.45v6.3ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.56 20.45h3.57V8.99H3.56v11.46Z" />
+            </svg>
+           Arham Shakeel
+          </a>
+
         </div>
-        
+
       </div>
     </footer>
   );

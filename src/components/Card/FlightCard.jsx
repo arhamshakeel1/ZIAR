@@ -1,7 +1,12 @@
 
-import React from 'react';
+import React,{useState} from 'react';
+import { Link } from 'react-router-dom'; //always use react-router-dom
+//import useWeatherData from '../../Contexts/WeatherAPIContext';
 
 function FlightCard({ flight }) {
+
+   //const {setSearch} = useWeatherData();
+   
    const isExpected = flight.status === "Expected";
   return (
     <div
@@ -132,11 +137,39 @@ function FlightCard({ flight }) {
 
 
       {/* ACTION */}
-      <button
-        onClick={() => alert("This is only a prototype. You won't be directed to elsewhere.")}
+     
+
+      <Link to={`/flights-tracker/weather/${flight.arrival.airport.name}`}
+      
         className="
           mt-7
           flex
+          w-full
+          items-center
+          justify-center
+          rounded-3xl
+          bg-[#51301F]
+          px-5
+          py-3.5
+          text-s
+          font-extrabold
+          tracking-wide
+          text-[#F6F3EF]
+          transition-all
+          duration-200
+          hover:bg-[#402417]
+          active:scale-[0.98]"
+          >
+          Weather Info 
+      
+      </Link>
+
+       <button
+        onClick={() => alert("This is only a prototype. You won't be directed to elsewhere.")}
+        className="
+          
+          flex
+          mt-3
           w-full
           items-center
           justify-center

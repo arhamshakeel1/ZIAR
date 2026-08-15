@@ -100,7 +100,7 @@ function FeaturedDestinations({ searchValue }) {
 
           
         </div>
-        <div className="h-[1px] w-full bg-[#8b8273] mb-8 md:mb-15"></div>
+        <div className="h-[1px] w-full bg-[#8b8273] mb-4 md:mb-4"></div>
 
       </div>
 
