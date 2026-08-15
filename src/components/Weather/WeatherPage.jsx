@@ -73,202 +73,108 @@ function WeatherPage() {
                     </div>
 
 
-                    {/* Main Weather */}
-                    <div className="
+                 
+                  {/* Main Weather */}
+<div className="
     border-2 border-[#9a8a6f]
-    rounded-xl
-    bg-[#1e1a1a]
-    mt-5
-    mx-4 sm:mx-8 md:mx-20 lg:mx-36
-    px-5 sm:px-10
-    py-8 sm:py-14 md:py-17
-    flex flex-col md:flex-row
-    items-center
-    justify-center
-    gap-8 sm:gap-12 md:gap-32 lg:gap-45
-    shadow-lg
-    transition-all duration-300
-    hover:shadow-xl hover:shadow-white/5
+    rounded-xl bg-[#1e1a1a] shadow-lg
+    mt-5 mx-4 sm:mx-8 md:mx-20 lg:mx-36
+    p-6 sm:p-10 md:py-14 md:px-16 lg:px-24
+    flex flex-col md:flex-row items-center justify-between
+    gap-8 sm:gap-12
+    transition-all duration-300 hover:shadow-xl hover:shadow-white/5
 ">
 
-                        {/* Temperature */}
-                        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+    {/* Left Column: Temperature Details */}
+    <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full">
 
-                            <p className="
-            text-sm sm:text-xl
-            tracking-[0.3em]
-            text-[#fffcf7]
-            mb-2 sm:mb-3
-        ">
-                                TODAY
-                            </p>
+        <p className="text-xs sm:text-sm md:text-xl tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
+            TODAY
+        </p>
 
-                            <div className="flex items-start mb-4 sm:mb-5 mt-2">
+        <div className="flex items-start mb-3 sm:mb-5 mt-1 sm:mt-2">
+            <span className="text-7xl sm:text-8xl md:text-[138px] text-[#bfae93] font-bold leading-none tracking-tighter">
+                {weatherDatabyName?.main?.temp
+                    ? Math.round(weatherDatabyName.main.temp)
+                    : "NaN"}
+            </span>
 
-                                <span className="
-                text-6xl
-                sm:text-8xl
-                md:text-[138px]
-                text-[#bfae93]
-                font-bold
-                leading-none
-            ">
-                                    {weatherDatabyName?.main?.temp
-                                        ? Math.round(weatherDatabyName.main.temp)
-                                        : "NaN"}
-                                </span>
+            <span className="text-2xl sm:text-4xl font-medium text-[#d6c8b2] ml-1 sm:ml-2 mt-1 sm:mt-2">
+                °C
+            </span>
+        </div>
 
-                                <span className="
-                text-2xl
-                sm:text-4xl
-                font-medium
-                text-[#d6c8b2]
-                ml-1
-                mt-1
-            ">
-                                    °C
-                                </span>
+        {/* High / Low */}
+        <div className="flex items-center justify-center md:justify-start gap-5 sm:gap-8 mt-2 sm:mt-6 text-sm sm:text-lg md:text-xl">
+            <span className="text-[#fffcf7] font-medium">
+                ↑ {weatherDatabyName?.main?.temp
+                    ? weatherDatabyName.main.temp_max.toFixed(1)
+                    : "NaN"}°
+            </span>
 
-                            </div>
+            <span className="text-[#d6c8b2]/60 font-medium">
+                ↓ {weatherDatabyName?.main?.temp_min
+                    ? weatherDatabyName.main.temp_min.toFixed(1)
+                    : "NaN"}°
+            </span>
+        </div>
 
-                            {/* High / Low */}
-                            <div className="
-            flex
-            gap-6 sm:gap-11
-            mt-3 sm:mt-8
-            text-base sm:text-xl
-        ">
-                                <span>
-                                    <strong className="text-[#fffcf7]">
-                                        ↑ {weatherDatabyName?.main?.temp
-                                            ? weatherDatabyName.main.temp_max.toFixed(1)
-                                            : "NaN"}°
-                                    </strong>
-                                </span>
+    </div>
 
-                                <span className="text-[#d6c8b2]/60">
-                                    ↓ <strong>
-                                        {weatherDatabyName?.main?.temp_min
-                                            ? weatherDatabyName.main.temp_min.toFixed(1)
-                                            : "NaN"}°
-                                    </strong>
-                                </span>
-                            </div>
+    {/* Right Column: Weather Icon & Condition */}
+    <div className="flex-1 flex flex-col items-center md:items-end text-center md:text-right w-full mt-2 md:mt-0">
 
-                        </div>
+        <svg
+            viewBox="0 0 200 200"
+            className="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 drop-shadow-xl"
+        >
+            <defs>
+                <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="40%" stopColor="#FFA033" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#FFA033" stopOpacity="0" />
+                </radialGradient>
 
+                <linearGradient id="sunBody" x1="20%" y1="0%" x2="80%" y2="100%">
+                    <stop offset="0%" stopColor="#FFD05B" />
+                    <stop offset="60%" stopColor="#FF8B15" />
+                    <stop offset="100%" stopColor="#E35500" />
+                </linearGradient>
 
-                        {/* Weather */}
-                        <div className="flex flex-col items-center">
+                <linearGradient id="cloudBody" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#8A95A5" />
+                    <stop offset="50%" stopColor="#5E6879" />
+                    <stop offset="100%" stopColor="#3C4453" />
+                </linearGradient>
+            </defs>
 
-                            <svg
-                                viewBox="0 0 200 200"
-                                className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64"
-                            >
-                                <defs>
+            <circle cx="130" cy="70" r="65" fill="url(#sunGlow)" />
+            <circle cx="130" cy="70" r="42" fill="url(#sunBody)" />
+            <path
+                d="M60 145C40 145 25 130 25 110C25 90 40 78 55 78C65 55 95 45 115 65C135 55 165 65 165 90C185 90 195 105 195 120C195 140 175 145 160 145Z"
+                fill="url(#cloudBody)"
+            />
+        </svg>
 
-                                    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
-                                        <stop
-                                            offset="40%"
-                                            stopColor="#FFA033"
-                                            stopOpacity="0.8"
-                                        />
-                                        <stop
-                                            offset="100%"
-                                            stopColor="#FFA033"
-                                            stopOpacity="0"
-                                        />
-                                    </radialGradient>
+        <div className="flex flex-col justify-center items-center md:items-end mt-1 sm:mt-2">
+            <h2 className="text-sm sm:text-base md:text-lg text-[#fffcf7] font-bold uppercase tracking-[0.15em] sm:tracking-[0.25em]">
+                {weatherDatabyName?.weather?.[0]?.description || "Clear Sky"}
+            </h2>
 
-                                    <linearGradient
-                                        id="sunBody"
-                                        x1="20%"
-                                        y1="0%"
-                                        x2="80%"
-                                        y2="100%"
-                                    >
-                                        <stop offset="0%" stopColor="#FFD05B" />
-                                        <stop offset="60%" stopColor="#FF8B15" />
-                                        <stop offset="100%" stopColor="#E35500" />
-                                    </linearGradient>
+            <p className="text-xs sm:text-sm md:text-base text-[#d6c8b2]/60 font-semibold mt-1 sm:mt-2">
+                Feels Like{" "}
+                {weatherDatabyName?.main?.feels_like
+                    ? Math.round(weatherDatabyName.main.feels_like)
+                    : "NaN"}°
+            </p>
+        </div>
 
-                                    <linearGradient
-                                        id="cloudBody"
-                                        x1="0%"
-                                        y1="0%"
-                                        x2="0%"
-                                        y2="100%"
-                                    >
-                                        <stop offset="0%" stopColor="#8A95A5" />
-                                        <stop offset="50%" stopColor="#5E6879" />
-                                        <stop offset="100%" stopColor="#3C4453" />
-                                    </linearGradient>
+    </div>
 
-                                </defs>
-
-                                <circle
-                                    cx="130"
-                                    cy="70"
-                                    r="65"
-                                    fill="url(#sunGlow)"
-                                />
-
-                                <circle
-                                    cx="130"
-                                    cy="70"
-                                    r="42"
-                                    fill="url(#sunBody)"
-                                />
-
-                                <path
-                                    d="M60 145C40 145 25 130 25 110C25 90 40 78 55 78C65 55 95 45 115 65C135 55 165 65 165 90C185 90 195 105 195 120C195 140 175 145 160 145Z"
-                                    fill="url(#cloudBody)"
-                                />
-
-                            </svg>
-
-
-                            <div className="
-            flex flex-col
-            justify-center
-            items-center
-            text-center
-        ">
-
-                                <h2 className="
-                text-base
-                sm:text-lg
-                text-[#fffcf7]
-                font-bold
-                uppercase
-                tracking-[0.15em]
-                sm:tracking-[0.3em]
-            ">
-                                    {weatherDatabyName?.weather?.[0]?.description || "Clear Sky"}
-                                </h2>
-
-                                <p className="
-                text-sm
-                sm:text-lg
-                text-[#d6c8b2]/60
-                font-semibold
-                mt-1 sm:mt-2
-            ">
-                                    Feels Like{" "}
-                                    {weatherDatabyName?.main?.feels_like
-                                        ? Math.round(weatherDatabyName.main.feels_like)
-                                        : "NaN"}°
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
+</div>
 
 
                     {/* humidty ,sea level etc */}
-                   <div className="
+                <div className="
     border-2 border-[#9a8a6f]
     rounded-xl
     bg-[#1e1a1a]
@@ -285,13 +191,15 @@ function WeatherPage() {
         grid-cols-1 sm:grid-cols-2 md:grid-cols-4
         gap-8 md:gap-0
         md:divide-x divide-[#9a8a6f]/40
+        place-items-center
     ">
 
         {/* Humidity */}
         <div className="
-            flex items-center justify-start sm:justify-center
+            flex items-center justify-center
             gap-4
             px-2 md:px-6
+            w-full
         ">
 
             <svg
@@ -309,7 +217,7 @@ function WeatherPage() {
                 <path d="M12 2.7s6 6.2 6 11a6 6 0 0 1-12 0c0-4.8 6-11 6-11Z" />
             </svg>
 
-            <div className="flex flex-col">
+            <div>
                 <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
                     Humidity
                 </p>
@@ -324,9 +232,10 @@ function WeatherPage() {
 
         {/* Pressure */}
         <div className="
-            flex items-center justify-start sm:justify-center
+            flex items-center justify-center
             gap-4
             px-2 md:px-6
+            w-full
         ">
 
             <svg
@@ -345,7 +254,7 @@ function WeatherPage() {
                 <path d="M12 7v5l3 2" />
             </svg>
 
-            <div className="flex flex-col">
+            <div>
                 <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
                     Pressure
                 </p>
@@ -354,7 +263,10 @@ function WeatherPage() {
                     <p className="text-2xl text-[#fffcf7] font-semibold">
                         {weatherDatabyName?.main?.pressure || "NaN"}
                     </p>
-                    <span className="text-sm text-[#d6c8b2]/60">hPa</span>
+
+                    <span className="text-sm text-[#d6c8b2]/60">
+                        hPa
+                    </span>
                 </div>
             </div>
 
@@ -363,9 +275,10 @@ function WeatherPage() {
 
         {/* Sea Level */}
         <div className="
-            flex items-center justify-start sm:justify-center
+            flex items-center justify-center
             gap-4
             px-2 md:px-6
+            w-full
         ">
 
             <svg
@@ -386,7 +299,7 @@ function WeatherPage() {
                 <path d="m9 6 3-3 3 3" />
             </svg>
 
-            <div className="flex flex-col">
+            <div>
                 <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
                     Sea Level
                 </p>
@@ -395,7 +308,10 @@ function WeatherPage() {
                     <p className="text-2xl text-[#fffcf7] font-semibold">
                         {weatherDatabyName?.main?.sea_level || "NaN"}
                     </p>
-                    <span className="text-sm text-[#d6c8b2]/60">hPa</span>
+
+                    <span className="text-sm text-[#d6c8b2]/60">
+                        hPa
+                    </span>
                 </div>
             </div>
 
@@ -404,9 +320,10 @@ function WeatherPage() {
 
         {/* Ground Level */}
         <div className="
-            flex items-center justify-start sm:justify-center
+            flex items-center justify-center
             gap-4
             px-2 md:px-6
+            w-full
         ">
 
             <svg
@@ -425,7 +342,7 @@ function WeatherPage() {
                 <path d="m5 20 3-9 3 5 3-8 5 12" />
             </svg>
 
-            <div className="flex flex-col">
+            <div>
                 <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
                     Ground Level
                 </p>
@@ -434,7 +351,10 @@ function WeatherPage() {
                     <p className="text-2xl text-[#fffcf7] font-semibold">
                         {weatherDatabyName?.main?.grnd_level || "NaN"}
                     </p>
-                    <span className="text-sm text-[#d6c8b2]/60">hPa</span>
+
+                    <span className="text-sm text-[#d6c8b2]/60">
+                        hPa
+                    </span>
                 </div>
             </div>
 
