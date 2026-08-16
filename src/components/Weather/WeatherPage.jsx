@@ -88,7 +88,7 @@ function WeatherPage() {
     {/* Left Column: Temperature Details */}
     <div className="flex flex-col items-start text-left w-1/2 md:w-auto">
 
-        <p className="text-xs sm:text-sm md:text-xl md:ml-5 tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
+        <p className="text-xs sm:text-sm md:text-xl md:ml-8 tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
             TODAY
         </p>
 
@@ -105,7 +105,7 @@ function WeatherPage() {
         </div>
 
         {/* High / Low */}
-        <div className="flex items-center justify-start gap-3 sm:gap-5 md:gap-8 mt-2 sm:mt-6 md:ml-2 text-sm sm:text-lg md:text-xl">
+        <div className="flex items-center justify-start gap-3 sm:gap-5 md:gap-8 mt-2 sm:mt-6  text-sm sm:text-lg md:text-xl">
             <span className="text-[#fffcf7] font-medium whitespace-nowrap">
                 ↑ {weatherDatabyName?.main?.temp
                     ? weatherDatabyName.main.temp_max.toFixed(1)
@@ -155,7 +155,7 @@ function WeatherPage() {
             />
         </svg>
 
-        <div className="flex flex-col items-center md:mr-10 justify-center mt-1 sm:mt-2">
+        <div className="flex flex-col items-center  justify-center mt-1 sm:mt-2">
             <h2 className="text-xs sm:text-base md:text-lg text-[#fffcf7] font-bold uppercase tracking-[0.05em] sm:tracking-[0.25em]">
                 {weatherDatabyName?.weather?.[0]?.description || "Clear Sky"}
             </h2>
