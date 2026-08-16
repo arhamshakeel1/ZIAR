@@ -114,8 +114,8 @@ function WeatherPage() {
           </div>
 
           {/* Secondary Stats Grid: Humidity, Pressure, Sea Level, Ground Level */}
-          <div className="mx-4 mt-8 rounded-xl border-2 border-[#9a8a6f] bg-[#1e1a1a] px-4 py-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-white/5 sm:mx-8 sm:mt-12 sm:px-6 sm:py-8 md:mx-20 lg:mx-36 lg:px-10">
-            <div className="grid grid-cols-2 divide-x divide-[#9a8a6f]/40 md:grid-cols-4">
+          <div className="mx-4 mt-8 rounded-xl border border-[#9a8a6f] bg-[#1e1a1a] px-4 py-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-white/5 sm:mx-8 sm:mt-12 sm:px-6 sm:py-8 md:mx-20 lg:mx-36 lg:px-10">
+            <div className="grid grid-cols-2  md:grid-cols-4">
               {/* Humidity */}
               <div className="flex items-center justify-center gap-2 px-2 py-4 sm:gap-4 sm:px-6 md:py-0">
                 <Droplet size={32} color="#d6c8b2" strokeWidth={1.5} className="shrink-0" />
