@@ -77,9 +77,9 @@ function WeatherPage() {
 {/* Main Weather */}
 <div className="
     border-2 border-[#9a8a6f]
-    rounded-xl bg-[#1e1a1a] shadow-lg
-    mt-5 mx-4 sm:mx-8 md:mx-20 lg:mx-36
-    p-5 sm:p-10 md:py-14 md:px-16 lg:px-24
+    rounded-2xl bg-[#1e1a1a] shadow-lg
+    mt-5 mx-2 sm:mx-8 md:mx-20 lg:mx-36
+    px-6 py-8 sm:p-10 md:py-14 md:px-16 lg:px-24
     flex flex-row items-center justify-center
     gap-4 sm:gap-16 md:gap-24 lg:gap-40
     transition-all duration-300 hover:shadow-xl hover:shadow-white/5
@@ -88,24 +88,24 @@ function WeatherPage() {
     {/* Left Column: Temperature Details */}
     <div className="flex flex-col items-start text-left w-1/2 md:w-auto">
 
-        <p className="text-[10px] sm:text-sm md:text-xl md:ml-20 tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
+        <p className="text-xs sm:text-sm md:text-xl md:ml-20 tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
             TODAY
         </p>
 
         <div className="flex items-start mb-2 sm:mb-5 mt-1 sm:mt-2">
-            <span className="text-5xl sm:text-7xl md:text-[138px] text-[#bfae93] font-bold leading-none tracking-tighter">
+            <span className="text-6xl sm:text-7xl md:text-[138px] text-[#bfae93] font-bold leading-none tracking-tighter">
                 {weatherDatabyName?.main?.temp
                     ? Math.round(weatherDatabyName.main.temp)
                     : "NaN"}
             </span>
 
-            <span className="text-lg sm:text-4xl font-medium text-[#d6c8b2] ml-1 sm:ml-2 mt-1">
+            <span className="text-xl sm:text-4xl font-medium text-[#d6c8b2] ml-1 sm:ml-2 mt-1">
                 °C
             </span>
         </div>
 
         {/* High / Low */}
-        <div className="flex items-center justify-start gap-2 sm:gap-5 md:gap-8 mt-1 sm:mt-6 md:ml-10 text-xs sm:text-lg md:text-xl">
+        <div className="flex items-center justify-start gap-3 sm:gap-5 md:gap-8 mt-2 sm:mt-6 md:ml-10 text-sm sm:text-lg md:text-xl">
             <span className="text-[#fffcf7] font-medium whitespace-nowrap">
                 ↑ {weatherDatabyName?.main?.temp
                     ? weatherDatabyName.main.temp_max.toFixed(1)
@@ -126,7 +126,7 @@ function WeatherPage() {
 
         <svg
             viewBox="0 0 200 200"
-            className="w-24 h-24 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 drop-shadow-xl"
+            className="w-28 h-28 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 drop-shadow-xl"
         >
             <defs>
                 <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
@@ -155,12 +155,12 @@ function WeatherPage() {
             />
         </svg>
 
-        <div className="flex flex-col items-center md:mr-10 justify-center  mt-0.5 sm:mt-2">
+        <div className="flex flex-col items-center md:mr-10 justify-center mt-1 sm:mt-2">
             <h2 className="text-xs sm:text-base md:text-lg text-[#fffcf7] font-bold uppercase tracking-[0.05em] sm:tracking-[0.25em]">
                 {weatherDatabyName?.weather?.[0]?.description || "Clear Sky"}
             </h2>
 
-            <p className="text-[10px] sm:text-sm md:text-base text-[#d6c8b2]/60 font-semibold mt-0.5 sm:mt-2">
+            <p className="text-xs sm:text-sm md:text-base text-[#d6c8b2]/60 font-semibold mt-0.5 sm:mt-2">
                 Feels Like{" "}
                 {weatherDatabyName?.main?.feels_like
                     ? Math.round(weatherDatabyName.main.feels_like)
@@ -173,195 +173,139 @@ function WeatherPage() {
 </div>
 
                     {/* humidty ,sea level etc */}
-                <div className="
-    border-2 border-[#9a8a6f]
-    rounded-xl
-    bg-[#1e1a1a]
-    mt-8 sm:mt-12
-    mx-4 sm:mx-8 md:mx-20 lg:mx-36
-    p-6 sm:p-8 lg:p-10
-    shadow-lg
-    transition-all duration-300
-    hover:shadow-xl hover:shadow-white/5
-">
-
-    <div className="
-        grid
-        grid-cols-1 sm:grid-cols-2 md:grid-cols-4
-        gap-8 md:gap-0
-        md:divide-x divide-[#9a8a6f]/40
-        place-items-center
-    ">
-
-        {/* Humidity */}
-        <div className="
-            flex items-center justify-center
-            gap-4
-            px-2 md:px-6
-            w-full
-        ">
-
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#d6c8b2"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="shrink-0"
-            >
-                <path d="M12 2.7s6 6.2 6 11a6 6 0 0 1-12 0c0-4.8 6-11 6-11Z" />
-            </svg>
-
-            <div>
-                <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
-                    Humidity
-                </p>
-
-                <p className="text-2xl text-[#fffcf7] font-semibold">
-                    {weatherDatabyName?.main?.humidity || "NaN"}%
-                </p>
-            </div>
-
-        </div>
+                           <div className="border-2 border-[#9a8a6f] rounded-xl bg-[#1e1a1a] mt-12 mr-36 ml-36 px-10 py-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-white/5">
 
 
-        {/* Pressure */}
-        <div className="
-            flex items-center justify-center
-            gap-4
-            px-2 md:px-6
-            w-full
-        ">
+                        <div className="grid grid-cols-4 divide-x divide-[#9a8a6f]/40">
 
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#d6c8b2"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="shrink-0"
-            >
-                <circle cx="12" cy="12" r="9" />
-                <path d="M12 7v5l3 2" />
-            </svg>
+                            {/* Humidity */}
+                            <div className="flex items-center justify-center gap-4 px-6">
 
-            <div>
-                <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
-                    Pressure
-                </p>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="38"
+                                    height="38"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#d6c8b2"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M12 2.7s6 6.2 6 11a6 6 0 0 1-12 0c0-4.8 6-11 6-11Z" />
+                                </svg>
 
-                <div className="flex items-baseline gap-1">
-                    <p className="text-2xl text-[#fffcf7] font-semibold">
-                        {weatherDatabyName?.main?.pressure || "NaN"}
-                    </p>
+                                <div>
+                                    <p className="text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                        Humidity
+                                    </p>
+                                    <p className="text-2xl text-[#fffcf7] font-semibold">
+                                        {weatherDatabyName?.main?.humidity || "NaN"}%
+                                    </p>
+                                </div>
 
-                    <span className="text-sm text-[#d6c8b2]/60">
-                        hPa
-                    </span>
-                </div>
-            </div>
-
-        </div>
+                            </div>
 
 
-        {/* Sea Level */}
-        <div className="
-            flex items-center justify-center
-            gap-4
-            px-2 md:px-6
-            w-full
-        ">
+                            {/* Pressure */}
+                            <div className="flex items-center justify-center gap-4 px-6">
 
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#d6c8b2"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="shrink-0"
-            >
-                <path d="M3 18c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" />
-                <path d="M3 13c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" />
-                <path d="M12 3v6" />
-                <path d="m9 6 3-3 3 3" />
-            </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="38"
+                                    height="38"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#d6c8b2"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 7v5l3 2" />
+                                </svg>
 
-            <div>
-                <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
-                    Sea Level
-                </p>
+                                <div>
+                                    <p className="text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                        Pressure
+                                    </p>
+                                    <p className="text-2xl text-[#fffcf7] font-semibold">
+                                        {weatherDatabyName?.main?.pressure || "NaN"}
+                                        <span className="text-sm ml-1">hPa</span>
+                                    </p>
+                                </div>
 
-                <div className="flex items-baseline gap-1">
-                    <p className="text-2xl text-[#fffcf7] font-semibold">
-                        {weatherDatabyName?.main?.sea_level || "NaN"}
-                    </p>
-
-                    <span className="text-sm text-[#d6c8b2]/60">
-                        hPa
-                    </span>
-                </div>
-            </div>
-
-        </div>
+                            </div>
 
 
-        {/* Ground Level */}
-        <div className="
-            flex items-center justify-center
-            gap-4
-            px-2 md:px-6
-            w-full
-        ">
+                            {/* Sea Level */}
+                            <div className="flex items-center justify-center gap-4 px-6">
 
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#d6c8b2"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="shrink-0"
-            >
-                <path d="M3 20h18" />
-                <path d="m5 20 3-9 3 5 3-8 5 12" />
-            </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="38"
+                                    height="38"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#d6c8b2"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M3 18c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" />
+                                    <path d="M3 13c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" />
+                                    <path d="M12 3v6" />
+                                    <path d="m9 6 3-3 3 3" />
+                                </svg>
 
-            <div>
-                <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
-                    Ground Level
-                </p>
+                                <div>
+                                    <p className="text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                        Sea Level
+                                    </p>
+                                    <p className="text-2xl text-[#fffcf7] font-semibold">
+                                        {weatherDatabyName?.main?.sea_level || "NaN"}
+                                        <span className="text-sm ml-1">ft</span>
+                                    </p>
+                                </div>
 
-                <div className="flex items-baseline gap-1">
-                    <p className="text-2xl text-[#fffcf7] font-semibold">
-                        {weatherDatabyName?.main?.grnd_level || "NaN"}
-                    </p>
+                            </div>
 
-                    <span className="text-sm text-[#d6c8b2]/60">
-                        hPa
-                    </span>
-                </div>
-            </div>
 
-        </div>
+                            {/* Ground Level */}
+                            <div className="flex items-center justify-center gap-4 px-6">
 
-    </div>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="38"
+                                    height="38"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#d6c8b2"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M3 20h18" />
+                                    <path d="m5 20 3-9 3 5 3-8 5 12" />
+                                </svg>
 
-</div>
+                                <div>
+                                    <p className="text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                        Ground Level
+                                    </p>
+                                    <p className="text-2xl text-[#fffcf7] font-semibold">
+                                        {weatherDatabyName?.main?.grnd_level || "NaN"}
+                                        <span className="text-sm ml-1">ft</span>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
 
                     {/* Longitude / Latitude */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-8 mx-4 sm:mx-8 md:mx-20 lg:mx-36">
