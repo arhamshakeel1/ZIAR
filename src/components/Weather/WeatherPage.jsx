@@ -88,7 +88,7 @@ function WeatherPage() {
     {/* Left Column: Temperature Details */}
     <div className="flex flex-col items-start text-left w-1/2 md:w-auto">
 
-        <p className="text-xs sm:text-sm md:text-xl md:ml-20 tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
+        <p className="text-xs sm:text-sm md:text-xl md:ml-5 tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
             TODAY
         </p>
 
@@ -105,7 +105,7 @@ function WeatherPage() {
         </div>
 
         {/* High / Low */}
-        <div className="flex items-center justify-start gap-3 sm:gap-5 md:gap-8 mt-2 sm:mt-6 md:ml-10 text-sm sm:text-lg md:text-xl">
+        <div className="flex items-center justify-start gap-3 sm:gap-5 md:gap-8 mt-2 sm:mt-6 md:ml-2 text-sm sm:text-lg md:text-xl">
             <span className="text-[#fffcf7] font-medium whitespace-nowrap">
                 ↑ {weatherDatabyName?.main?.temp
                     ? weatherDatabyName.main.temp_max.toFixed(1)
