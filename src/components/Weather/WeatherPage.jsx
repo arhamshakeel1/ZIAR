@@ -93,7 +93,7 @@ function WeatherPage() {
         </p>
 
         <div className="flex items-start mb-2 sm:mb-5 mt-1 sm:mt-2">
-            <span className="text-6xl sm:text-7xl md:text-[138px] text-[#bfae93] font-bold leading-none tracking-tighter">
+            <span className="text-6xl sm:text-7xl md:text-[138px] text-[#e3dfd9] font-bold leading-none tracking-tighter">
                 {weatherDatabyName?.main?.temp
                     ? Math.round(weatherDatabyName.main.temp)
                     : "NaN"}
