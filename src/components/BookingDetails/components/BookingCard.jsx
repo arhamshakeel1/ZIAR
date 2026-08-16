@@ -43,7 +43,7 @@ export default function BookingCard({
         />
         <div>
           <h2 className="text-xl font-extrabold leading-tight tracking-tight">{title}</h2>
-          <div className="flex items-center gap-1 mt-1 text-[#7A7568] text-sm font-semibold">
+          <div className="flex items-center gap-1 mt-1 text-[#0e0d0c] text-sm font-semibold">
             {/* Custom SVG Star */}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#FFB016]">
               <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
@@ -56,9 +56,9 @@ export default function BookingCard({
       {/* 2. Visual Slider for Nights */}
       <div className="mb-6">
         <div className="flex justify-between items-end mb-3">
-          <span className="text-xs uppercase tracking-widest text-[#7A7568] font-bold">Duration</span>
-          <span className="text-xl font-bold text-[#483226] leading-none">
-            {Nights} <span className="text-xs text-[#7A7568] font-bold">Nights</span>
+          <span className="text-[13px]   text-[#11110f] font-bold">Duration:</span>
+          <span className="text-[13px] font-bold text-[#483226] leading-none">
+            {Nights} <span className="text-[13px] text-[#111110] font-bold">Nights</span>
           </span>
         </div>
         
@@ -73,7 +73,7 @@ export default function BookingCard({
           />
         </div>
         
-        <div className="flex justify-between text-[10px] font-extrabold uppercase mt-2 text-[#7A7568]">
+        <div className="flex justify-between text-[10px] font-extrabold uppercase mt-2 text-[#100f0e]">
           <span>1 Night</span>
           <span>14 Nights</span>
         </div>
@@ -82,10 +82,8 @@ export default function BookingCard({
       {/* 3. Segmented Control for Travelers */}
       <div className="mb-6">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-xs uppercase tracking-widest text-[#7A7568] font-bold">Guests</span>
-          <span className="text-[10px] uppercase tracking-wider font-bold text-[#483226] bg-[#B5AFA1]/40 px-2 py-1 rounded-md">
-            Adults
-          </span>
+          <span className="text-[13px]   text-[#0e0e0c] font-bold">Guests:</span>
+          
         </div>
         
         <div className="flex bg-[#B5AFA1]/30 p-1 rounded-xl border-none">
@@ -110,26 +108,23 @@ export default function BookingCard({
 
       {/* 4. Clean Price Breakdown */}
       <div className="pt-5 border-t border-[#483226]/10 mb-6 space-y-3">
-        <div className="flex justify-between text-sm text-[#7A7568] font-semibold">
+        <div className="flex justify-between text-[13px] text-[#030303] font-bold">
           <span>${price} x {Nights} nights x {Travellers} guests</span>
           <span className="text-[#483226] font-bold">${preTotal.toFixed(2)}</span>
         </div>
-        <div className="flex justify-between text-sm text-[#7A7568] font-semibold">
+        <div className="flex justify-between text-[13px] text-[#0a0a09] font-bold">
           <span>Taxes & fees</span>
           <span className="text-[#483226] font-bold">${taxes.toFixed(2)}</span>
         </div>
         <div className="flex justify-between items-end pt-2">
-          <span className="text-xs uppercase tracking-widest text-[#7A7568] font-bold">Total</span>
+          <span className="text-[13px]  text-[#000000] font-bold">Total:</span>
           <span className="text-3xl font-extrabold text-[#483226] leading-none">${Total.toFixed(2)}</span>
         </div>
       </div>
 
       {/* 5. Primary CTA */}
       <button  onClick={() => alert("This feature is coming soon. You won't be charged for now.")} className="w-full py-4 rounded-full bg-[#483226] text-white text-sm font-bold tracking-wide transition-transform hover:scale-[0.98] hover:bg-[#3a271d] shadow-md flex items-center justify-center gap-2">
-        Book Now
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-        </svg>
+        Book Now  <span>→</span>
       </button>
       
     </div>

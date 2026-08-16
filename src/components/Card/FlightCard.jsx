@@ -32,11 +32,11 @@ function FlightCard({ flight }) {
           
 
             <div className="flex items-baseline gap-2">
-              <h2 className="text-4xl font-black tracking-tight text-[#51301F]">
+              <h2 className="text-4xl font-black  text-[#51301F]">
                 {flight.arrival.airport.iata}
               </h2>
 
-              <span className="text-lg text-[#8B8175]">
+              <span className="text-lg text-[#242220]">
                 →
               </span>
             </div>
@@ -51,7 +51,7 @@ function FlightCard({ flight }) {
               text-[9px]
               font-bold
               uppercase
-              tracking-[0.15em]
+              
               text-[#eae4de]
                ${isExpected ? "bg-green-900" : "bg-[#79330f]"}
             `}>
@@ -87,8 +87,8 @@ function FlightCard({ flight }) {
 
             {/* AIRLINE */}
             <div className="flex items-center justify-between gap-4">
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#706a62]">
-                Airline
+              <span className="text-[11px] font-black   text-[#0d0d0c]">
+                Airline:
               </span>
 
               <span className="text-sm font-bold text-[#51301F]">
@@ -99,8 +99,8 @@ function FlightCard({ flight }) {
 
             {/* DEPARTURE */}
             <div className="flex items-center justify-between gap-4">
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#706a62]">
-                Departs
+              <span className="text-[11px] font-black   text-[#11100f]">
+                Departs:
               </span>
 
               <span className="text-sm font-bold text-[#51301F]">

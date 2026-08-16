@@ -40,19 +40,19 @@ function FeaturedDestinations({ searchValue }) {
         <div className="mb-8 md:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
           <div className="max-w-2xl">
             <div className="mb-3 md:mb-5 flex items-center gap-4">
-              <div className={`h-[1px] w-8 md:w-12 ${themeState === "dark" ? "bg-gray-600" : "bg-[#8B8175]/60"}`}></div>
-              <p className={`text-[10px] md:text-[11px] font-bold uppercase tracking-[0.3em] ${themeState === "dark" ? "text-gray-400" : "text-[#8B8175]"}`}>
-                Explore Pakistan
+              {/* <div className={`h-[1px] w-8 md:w-12 ${themeState === "dark" ? "bg-gray-600" : "bg-[#8B8175]/60"}`}></div> */}
+              <p className={`text-[12px] md:text-[14px] cursor-pointer font-bold ${themeState === "dark" ? "text-gray-300" : "text-[#8B8175]"}`}>
+                -Displying destinations in Pakistan
               </p>
             </div>
-            <h2 className={`text-4xl font-light tracking-tight md:text-5xl lg:text-6xl ${themeState === "dark" ? "text-[#ede7d8]" : "text-[#1A1A1A]"}`}>
-              Featured <span className="font-serif font-medium italic text-gray-500">Destinations</span>
+            <h2 className={`text-4xl font-medium  md:text-5xl lg:text-6xl ${themeState === "dark" ? "text-[#ede7d8]" : "text-[#1A1A1A]"}`}>
+              Featured <span className="font-serif font-medium italic text-gray-400">Destinations</span>
             </h2>
           </div>
 
           <div className="pb-2">
             <Link to="/Destinations">
-              <button className={`group flex items-center gap-2 text-sm font-semibold tracking-wide transition-colors ${themeState === "dark" ? "text-[#E8E4D9] hover:text-white" : "text-[#1A1A1A] hover:text-gray-500"}`}>
+              <button className={`group flex items-center gap-2 text-sm font-semibold cursor-pointer transition-colors ${themeState === "dark" ? "text-[#E8E4D9] hover:text-white" : "text-[#1A1A1A] hover:text-gray-500"}`}>
                 View All Locations
                 <span >→</span>
               </button>
@@ -116,13 +116,13 @@ function FeaturedDestinations({ searchValue }) {
       <div className="mb-10 md:mb-18 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
           <div className="max-w-2xl">
             <div className="mb-3 md:mb-5 flex items-center gap-4">
-             <div className={`h-[1px] w-8 md:w-12 ${themeState === "dark" ? "bg-gray-600" : "bg-[#8B8175]/60"}`}></div>
-              <p className={`text-[12px] md:text-[14px] font-bold uppercase  ${themeState === "dark" ? "text-gray-400" : "text-[#8B8175]"}`}>
-                Tracking live Flights From LHR
+             {/* <div className={`h-[1px] w-8 md:w-12 ${themeState === "dark" ? "bg-gray-600" : "bg-[#8B8175]/60"}`}></div> */}
+              <p className={`text-[12px] md:text-[14px] font-bold   ${themeState === "dark" ? "text-gray-300" : "text-[#8B8175]"}`}>
+                -Tracking live Flights From LHR
               </p>  
             </div>
              
-            <h2 className={` text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl ${themeState === "dark" ? "text-[#ede7d8]" : "text-[#1A1A1A]"}`}>
+            <h2 className={` text-4xl font-medium  md:text-5xl lg:text-6xl ${themeState === "dark" ? "text-[#ede2d8]" : "text-[#1A1A1A]"}`}>
               LIVE <span className="font-serif font-medium italic text-gray-500">Departures</span>
             </h2>
             
@@ -130,7 +130,7 @@ function FeaturedDestinations({ searchValue }) {
 
           <div className="pb-2">
             <Link to="/flights-tracker">
-              <button className={`group flex items-center gap-2 text-sm font-semibold tracking-wide transition-colors ${themeState === "dark" ? "text-[#E8E4D9] hover:text-white" : "text-[#1A1A1A] hover:text-gray-500"}`}>
+              <button className={`group flex items-center gap-2 text-sm font-semibold  transition-colors ${themeState === "dark" ? "text-[#E8E4D9] hover:text-white" : "text-[#1A1A1A] hover:text-gray-500"}`}>
                 View All Flights
                 <span >→</span>
               </button>

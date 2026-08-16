@@ -14,10 +14,10 @@ export default function Destination() {
         
         {/* Page Header */}
         <div className="mb-10">
-          <p className="mb-3 text-[15px] font-bold uppercase tracking-[0.3em] text-[#8B8175]">
-            All Locations
+          <p className="mb-3 text-lg font-medium   text-[#c7af8f]">
+            -All Locations
           </p>
-          <h1 className={`text-4xl font-light tracking-tight ${themeState==="dark"? "text-[#d6c8b2]" : "text-[#0c0c0b]"} md:text-5xl lg:text-6xl`}>
+          <h1 className={`text-4xl font-medium ${themeState==="dark"? "text-[#eae5de]" : "text-[#0c0c0b]"} md:text-5xl lg:text-6xl`}>
             Explore <span className="font-serif font-medium italic text-gray-500">Destinations</span>
           </h1>
         </div>

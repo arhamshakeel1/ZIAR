@@ -28,16 +28,16 @@ export default function Hero({ searchValue, setSearchValue }) {
              
             <div className="flex flex-col items-center drop-shadow-2xl">
               
-              <span className="text-xs sm:text-sm md:text-base text-gray-200 uppercase tracking-[0.3em] sm:tracking-[0.4em] font-semibold mb-2 md:mb-3">
+              <span className="text-[17px] sm:text-sm md:text-[21px] text-gray-300 font-medium mb-2 md:mb-3">
                 Your Next Escape
               </span>
               
               {/* 3. Scaled title: text-4xl for mobile, 5xl to 6rem for larger screens */}
-              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-serif italic text-[#ede7d8] mb-3 sm:mb-4 leading-[1.1] tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-serif italic text-[#cfc7b4] mb-3 sm:mb-4 leading-[1.1] tracking-tight">
                 To The North,
               </h1>
               
-              <p className="text-[10px] sm:text-xs md:text-sm text-gray-300 uppercase tracking-[0.2em] sm:tracking-[0.3em] font-medium mt-1">
+              <p className="text-[17px] sm:text-xs md:text-[21px] text-gray-300  font-medium ">
                 Is closer than you think
               </p>
               
@@ -62,12 +62,12 @@ export default function Hero({ searchValue, setSearchValue }) {
                   type="text"
                   value={searchValue}
                   placeholder="Search destinations..."
-                  className="w-full bg-transparent text-gray-900 placeholder-gray-500 text-[14px] sm:text-[15px] font-medium tracking-wide focus:outline-none"
+                  className="w-full bg-transparent text-gray-900 placeholder-gray-500 text-[14px] sm:text-[15px] font-medium focus:outline-none"
                 />
               </div>
 
               {/* 6. Button: Full width on mobile (w-full), auto width on desktop (sm:w-auto) */}
-              <button className="bg-[#1A1A1A] hover:bg-black text-white px-8 py-3 sm:py-3.5 rounded-full font-semibold tracking-wide transition-all shadow-lg flex-shrink-0 text-sm w-full sm:w-auto">
+              <button className="bg-[#1A1A1A] hover:bg-black text-white px-8 py-3 sm:py-3.5 rounded-full font-semibold  transition-all shadow-lg flex-shrink-0 text-sm w-full sm:w-auto">
                 Explore Now
               </button>
               
@@ -75,15 +75,15 @@ export default function Hero({ searchValue, setSearchValue }) {
           </div>
 
           {/* Floating Destination Tag */}
-          <div className="absolute top-6 right-6 hidden lg:flex items-center gap-4 transition-transform">
-            <div className="bg-white/10 p-2.5 rounded-full backdrop-blur-md border border-white/20">
+          <div className="absolute top-6 right-6 hidden lg:flex items-center gap-2 transition-transform">
+            <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-[#ede7d8]">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
               </svg>
             </div>
             <div className="text-left">
               <p className="text-white/70 text-[9px] font-bold uppercase tracking-[0.2em] mb-0.5"></p>
-              <p className="text-[#ede7d8] text-[15px] font-serif italic tracking-wide">Gilgit, Pakistan</p>
+              <p className="text-[#f4f2f0] text-[15px] font-serif  ">Gilgit, Pakistan</p>
             </div>
           </div>
           

@@ -19,10 +19,10 @@ function Wishlist() {
           
           {/* ---  HEADING SECTION --- */}
         <div className="mb-10">
-          <p className="mb-3 text-[15px] font-bold uppercase tracking-[0.3em] text-[#8B8175]">
-            WISHLIST CATALOG
+          <p className="mb-3 text-lg font-medium text-[#c7af8f]">
+            -Wishlist 
           </p>
-          <h1 className={`text-4xl font-light tracking-tight ${themeState==='dark' ? "text-[#d6c8b2]" : "text-[#121110]" } md:text-5xl lg:text-6xl`}>
+          <h1 className={`text-4xl font-medium ${themeState==='dark' ? "text-[#eae6e0]" : "text-[#121110]" } md:text-5xl lg:text-6xl`}>
             Saved <span className="font-serif font-medium italic text-gray-500">Destinations</span>
           </h1>
         </div>

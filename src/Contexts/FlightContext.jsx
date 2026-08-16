@@ -18,7 +18,7 @@ export function FlightProvider({ children }) {
         const options = {
           method: "GET",
           headers: {
-            "x-rapidapi-key": "7c2175a573msh4647c286f4a0d8dp1645eejsn9da3b5894f14",
+            "x-rapidapi-key": "82656c6840msh6a48def4eba9eedp1d0469jsn4b37f6d000e2",
             "x-rapidapi-host": "aerodatabox.p.rapidapi.com",
           },
         };

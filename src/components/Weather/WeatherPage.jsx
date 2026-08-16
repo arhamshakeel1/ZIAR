@@ -76,20 +76,20 @@ function WeatherPage() {
                     {/* Main Weather */}
                     {/* Main Weather */}
                     <div className="
-    border-2 border-[#9a8a6f]
-    rounded-2xl bg-[#1e1a1a] shadow-lg
-    mt-5 mx-2 sm:mx-8 md:mx-20 lg:mx-36
-    px-6 py-8 sm:p-10 md:py-14 md:px-16 lg:px-24
-    flex flex-row items-center justify-center
-    gap-4 sm:gap-16 md:gap-24 lg:gap-40
-    transition-all duration-300 hover:shadow-xl hover:shadow-white/5
-">
+                                        border-2 border-[#9a8a6f]
+                                        rounded-2xl bg-[#1e1a1a] shadow-lg
+                                        mt-5 mx-2 sm:mx-8 md:mx-20 lg:mx-36
+                                        px-6 py-8 sm:p-10 md:py-14 md:px-16 lg:px-24
+                                        flex flex-row items-center justify-center
+                                        gap-4 sm:gap-16 md:gap-24 lg:gap-40
+                                        transition-all duration-300 hover:shadow-xl hover:shadow-white/5
+                                    ">
 
                         {/* Left Column: Temperature Details */}
                         <div className="flex flex-col items-start text-left w-1/2 md:w-auto">
 
-                            <p className="text-xs sm:text-sm md:text-xl md:ml-8 tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
-                                TODAY
+                            <p className="text-lg sm:text-sm md:text-2xl md:ml-8  text-[#fffcf7] mb-1 sm:mb-3">
+                                Today
                             </p>
 
                             <div className="flex items-start mb-2 sm:mb-5 mt-1 sm:mt-2">
@@ -99,7 +99,7 @@ function WeatherPage() {
                                         : "NaN"}
                                 </span>
 
-                                <span className="text-xl sm:text-4xl font-medium text-[#d6c8b2] ml-1 sm:ml-2 mt-1">
+                                <span className="text-xl sm:text-4xl font-medium text-[#e7e2d9] ml-1 sm:ml-2 mt-1">
                                     °C
                                 </span>
                             </div>
@@ -156,11 +156,11 @@ function WeatherPage() {
                             </svg>
 
                             <div className="flex flex-col items-center  justify-center mt-1 sm:mt-2">
-                                <h2 className="text-xs sm:text-base md:text-lg text-[#fffcf7] font-bold uppercase tracking-[0.05em] sm:tracking-[0.25em]">
+                                <h2 className="text-lg sm:text-lg md:text-xl text-[#fffcf7] font-bold ">
                                     {weatherDatabyName?.weather?.[0]?.description || "Clear Sky"}
                                 </h2>
 
-                                <p className="text-xs sm:text-sm md:text-base text-[#d6c8b2]/60 font-semibold mt-0.5 sm:mt-2">
+                                <p className="text-xs sm:text-sm md:text-base text-[#fffcf7] font-semibold mt-0.5 sm:mt-2">
                                     Feels Like{" "}
                                     {weatherDatabyName?.main?.feels_like
                                         ? Math.round(weatherDatabyName.main.feels_like)
@@ -216,7 +216,7 @@ function WeatherPage() {
                                 </svg>
 
                                 <div>
-                                    <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                    <p className="text-xs sm:text-sm text-[#d6c8b2] font-bold uppercase">
                                         Humidity
                                     </p>
 
@@ -253,7 +253,7 @@ function WeatherPage() {
                                 </svg>
 
                                 <div>
-                                    <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                    <p className="text-xs sm:text-sm text-[#d6c8b2] font-bold uppercase ">
                                         Pressure
                                     </p>
 
@@ -293,7 +293,7 @@ function WeatherPage() {
                                 </svg>
 
                                 <div>
-                                    <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                    <p className="text-xs sm:text-sm uppercase text-[#d6c8b2] font-bold ">
                                         Sea Level
                                     </p>
 
@@ -331,7 +331,7 @@ function WeatherPage() {
                                 </svg>
 
                                 <div>
-                                    <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                    <p className="text-xs sm:text-sm uppercase text-[#d6c8b2] font-bold ">
                                         Ground Level
                                     </p>
 
@@ -382,7 +382,7 @@ function WeatherPage() {
                             </svg>
 
                             <div>
-                                <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                <p className="text-xs sm:text-sm uppercase text-[#d6c8b2] font-bold ">
                                     Longitude
                                 </p>
 
@@ -427,7 +427,7 @@ function WeatherPage() {
                             </svg>
 
                             <div>
-                                <p className="text-xs sm:text-sm text-[#d6c8b2]/60 uppercase tracking-widest">
+                                <p className="text-xs sm:text-sm  uppercase text-[#d6c8b2] font-bold ">
                                     Latitude
                                 </p>
 
@@ -444,29 +444,29 @@ function WeatherPage() {
 
                     {/* wind */}
                     <div className="
-    max-w-[1220px]
-    mx-4 sm:mx-8 md:mx-20 lg:mx-auto
-    mt-12 sm:mt-20
-    mb-24 sm:mb-60
-    text-[#dcd7cf]
-    shadow-lg
-    transition-all duration-300
-    hover:shadow-xl hover:shadow-white/5
-">
+                            max-w-[1220px]
+                            mx-4 sm:mx-8 md:mx-20 lg:mx-auto
+                            mt-12 sm:mt-20
+                            mb-24 sm:mb-60
+                            text-[#dcd7cf]
+                            shadow-lg
+                            transition-all duration-300
+                            hover:shadow-xl hover:shadow-white/5
+                        ">
 
                         <div className="
-        border-2 border-[#9a8a6f]
-        rounded-xl
-        bg-[#1e1a1a]
-        p-6 sm:p-10 lg:p-16
-    ">
+                        border-2 border-[#9a8a6f]
+                        rounded-xl
+                        bg-[#1e1a1a]
+                        p-6 sm:p-10 lg:p-16
+                    ">
 
                             <div className="
-            grid
-            grid-cols-1 sm:grid-cols-3
-            items-center
-            gap-0 sm:gap-4
-        ">
+                                        grid
+                                        grid-cols-1 sm:grid-cols-3
+                                        items-center
+                                        gap-0 sm:gap-4
+                                    ">
 
                                 {/* Direction */}
                                 <div className="flex items-center justify-center gap-4 pb-8 sm:pb-0">
@@ -488,7 +488,7 @@ function WeatherPage() {
                                     </svg>
 
                                     <div>
-                                        <p className="text-xs sm:text-sm uppercase tracking-widest text-[#d6c8b2]/60">
+                                        <p className="text-xs sm:text-sm uppercase text-[#d6c8b2] font-bold ">
                                             Direction
                                         </p>
 
@@ -508,7 +508,7 @@ function WeatherPage() {
                 px-4
             ">
 
-                                    <p className="text-xs sm:text-sm uppercase tracking-widest text-[#d6c8b2]/60">
+                                    <p className="text-xs sm:text-sm uppercase text-[#d6c8b2] font-bold ">
                                         Wind Speed
                                     </p>
 
@@ -545,7 +545,7 @@ function WeatherPage() {
                                     </svg>
 
                                     <div>
-                                        <p className="text-xs sm:text-sm uppercase tracking-widest text-[#d6c8b2]/60">
+                                        <p className="text-xs sm:text-sm uppercase text-[#d6c8b2] font-bold ">
                                             Visibility
                                         </p>
 

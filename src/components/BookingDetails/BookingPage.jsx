@@ -37,7 +37,7 @@ function BookingPage() {
         {/* Destination Header */}
         <header className="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <p className={`mb-2 text-sm uppercase tracking-wider font-bold ${isDark ? "text-gray-400" : "text-gray-500"}`}>
+            <p className={`mb-2 text-sm uppercase  font-bold ${isDark ? "text-white" : "text-gray-500"}`}>
               {bookedCard.location}
             </p>
 
@@ -48,8 +48,8 @@ function BookingPage() {
             <div className={`mt-3 flex items-center gap-2 text-sm sm:text-base ${isDark ? "text-gray-300" : "text-gray-600"}`}>
               <span className="text-yellow-400 text-lg">★</span>
               <span className="font-bold">{bookedCard.rating}</span>
-              <span className="opacity-50">•</span>
-              <span>Highly rated destination</span>
+              
+              
             </div>
           </div>
         </header>

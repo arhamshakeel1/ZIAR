@@ -15,10 +15,10 @@ export default function AboutPage() {
         
         {/* Your Custom Heading Structure */}
         <div className="mb-10 mt-8">
-          <p className="mb-3 text-[15px] font-bold uppercase tracking-[0.3em] text-[#8B8175]">
-            Our Story
+          <p className="mb-3 text-lg font-medium text-[#c7af8f]">
+            -Our Story
           </p>
-          <h1 className={`text-4xl font-light tracking-tight ${isDark ? "text-[#d6c8b2]" : "text-[#0c0c0b]"} md:text-5xl lg:text-6xl`}>
+          <h1 className={`text-4xl font-medium ${isDark ? "text-[#dfd9d1]" : "text-[#0c0c0b]"} md:text-5xl lg:text-6xl`}>
             About <span className="font-serif font-medium italic text-gray-500">ZIAR</span>
           </h1>
         </div>
@@ -50,10 +50,10 @@ export default function AboutPage() {
 
           {/* Featured Quote Section */}
           <div className="mt-20 border-l-[3px] border-[#8B8175] pl-6 md:pl-10 py-2">
-            <p className={`text-2xl md:text-2xl font-serif italic font-medium leading-snug tracking-wide ${
+            <p className={`text-2xl md:text-2xl italic font-medium   ${
               isDark ? "text-[#d6c8b2]" : "text-[#483226]"
             }`}>
-              Welcome to ZIAR. Enjoy searching for a journey.
+              Welcome to ZIAR. Good Luck searching for a journey.
             </p>
           </div>
 

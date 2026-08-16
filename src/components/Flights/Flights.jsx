@@ -22,14 +22,14 @@ export default function Flights() {
       {/* PAGE HEADER */}
       <div className="mx-auto mb-10 max-w-6xl">
 
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[#8B8175]">
-          All Flights Departing From LHE
+        <p className="mb-2 text-lg font-medium  text-[#c7af8f]">
+          -All Flights Departing From LHE
         </p>
 
         <h1
-          className={`text-4xl font-light tracking-tight ${
+          className={`text-4xl font-medium  ${
             themeState === "dark"
-              ? "text-[#d6c8b2]"
+              ? "text-[#e2dcd1]"
               : "text-[#1A1A1A]"
           } md:text-6xl`}
         >
