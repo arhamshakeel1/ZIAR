@@ -18,7 +18,7 @@ function WeatherPage() {
 
         <main className="min-h-screen bg-[#191c1f] p-0.5">
 
-            {false ?
+            {loading ?
 
                 <div className="min-h-screen flex flex-col items-center justify-center text-[#d6c8b2]">
 
