@@ -100,7 +100,7 @@ function WeatherPage() {
                                 </span>
 
                                 <span className="text-xl sm:text-4xl font-medium text-[#e7e2d9] ml-1 sm:ml-2 mt-1">
-                                    °C
+                                    °F
                                 </span>
                             </div>
 
