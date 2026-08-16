@@ -42,7 +42,7 @@ function WeatherPage() {
 
                 </div>
 
-                : <div className="max-w-[1650px] mx-auto">
+                : <div className="max-w-[1500px] mx-auto">
 
 
 
@@ -73,46 +73,46 @@ function WeatherPage() {
                     </div>
 
 
-                 
-                  {/* Main Weather */}
+                    {/* Main Weather */}
+{/* Main Weather */}
 <div className="
     border-2 border-[#9a8a6f]
     rounded-xl bg-[#1e1a1a] shadow-lg
     mt-5 mx-4 sm:mx-8 md:mx-20 lg:mx-36
-    p-6 sm:p-10 md:py-14 md:px-16 lg:px-24
-    flex flex-col md:flex-row items-center justify-between
-    gap-8 sm:gap-12
+    p-5 sm:p-10 md:py-14 md:px-16 lg:px-24
+    flex flex-row items-center justify-center
+    gap-4 sm:gap-16 md:gap-24 lg:gap-40
     transition-all duration-300 hover:shadow-xl hover:shadow-white/5
 ">
 
     {/* Left Column: Temperature Details */}
-    <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full">
+    <div className="flex flex-col items-start text-left w-1/2 md:w-auto">
 
-        <p className="text-xs sm:text-sm md:text-xl tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
+        <p className="text-[10px] sm:text-sm md:text-xl md:ml-20 tracking-[0.3em] text-[#fffcf7] mb-1 sm:mb-3">
             TODAY
         </p>
 
-        <div className="flex items-start mb-3 sm:mb-5 mt-1 sm:mt-2">
-            <span className="text-7xl sm:text-8xl md:text-[138px] text-[#bfae93] font-bold leading-none tracking-tighter">
+        <div className="flex items-start mb-2 sm:mb-5 mt-1 sm:mt-2">
+            <span className="text-5xl sm:text-7xl md:text-[138px] text-[#bfae93] font-bold leading-none tracking-tighter">
                 {weatherDatabyName?.main?.temp
                     ? Math.round(weatherDatabyName.main.temp)
                     : "NaN"}
             </span>
 
-            <span className="text-2xl sm:text-4xl font-medium text-[#d6c8b2] ml-1 sm:ml-2 mt-1 sm:mt-2">
+            <span className="text-lg sm:text-4xl font-medium text-[#d6c8b2] ml-1 sm:ml-2 mt-1">
                 °C
             </span>
         </div>
 
         {/* High / Low */}
-        <div className="flex items-center justify-center md:justify-start gap-5 sm:gap-8 mt-2 sm:mt-6 text-sm sm:text-lg md:text-xl">
-            <span className="text-[#fffcf7] font-medium">
+        <div className="flex items-center justify-start gap-2 sm:gap-5 md:gap-8 mt-1 sm:mt-6 md:ml-10 text-xs sm:text-lg md:text-xl">
+            <span className="text-[#fffcf7] font-medium whitespace-nowrap">
                 ↑ {weatherDatabyName?.main?.temp
                     ? weatherDatabyName.main.temp_max.toFixed(1)
                     : "NaN"}°
             </span>
 
-            <span className="text-[#d6c8b2]/60 font-medium">
+            <span className="text-[#d6c8b2]/60 font-medium whitespace-nowrap">
                 ↓ {weatherDatabyName?.main?.temp_min
                     ? weatherDatabyName.main.temp_min.toFixed(1)
                     : "NaN"}°
@@ -122,11 +122,11 @@ function WeatherPage() {
     </div>
 
     {/* Right Column: Weather Icon & Condition */}
-    <div className="flex-1 flex flex-col items-center md:items-end text-center md:text-right w-full mt-2 md:mt-0">
+    <div className="flex flex-col items-end text-right w-1/2 md:w-auto">
 
         <svg
             viewBox="0 0 200 200"
-            className="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 drop-shadow-xl"
+            className="w-24 h-24 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 drop-shadow-xl"
         >
             <defs>
                 <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
@@ -155,12 +155,12 @@ function WeatherPage() {
             />
         </svg>
 
-        <div className="flex flex-col justify-center items-center md:items-end mt-1 sm:mt-2">
-            <h2 className="text-sm sm:text-base md:text-lg text-[#fffcf7] font-bold uppercase tracking-[0.15em] sm:tracking-[0.25em]">
+        <div className="flex flex-col items-center md:mr-10 justify-center  mt-0.5 sm:mt-2">
+            <h2 className="text-xs sm:text-base md:text-lg text-[#fffcf7] font-bold uppercase tracking-[0.05em] sm:tracking-[0.25em]">
                 {weatherDatabyName?.weather?.[0]?.description || "Clear Sky"}
             </h2>
 
-            <p className="text-xs sm:text-sm md:text-base text-[#d6c8b2]/60 font-semibold mt-1 sm:mt-2">
+            <p className="text-[10px] sm:text-sm md:text-base text-[#d6c8b2]/60 font-semibold mt-0.5 sm:mt-2">
                 Feels Like{" "}
                 {weatherDatabyName?.main?.feels_like
                     ? Math.round(weatherDatabyName.main.feels_like)
@@ -171,7 +171,6 @@ function WeatherPage() {
     </div>
 
 </div>
-
 
                     {/* humidty ,sea level etc */}
                 <div className="
@@ -461,7 +460,7 @@ function WeatherPage() {
 
                     {/* wind */}
                     <div className="
-    max-w-[1355px]
+    max-w-[1220px]
     mx-4 sm:mx-8 md:mx-20 lg:mx-auto
     mt-12 sm:mt-20
     mb-24 sm:mb-60
